@@ -14,8 +14,8 @@ public:
         }
     }
     
-    void dfs(vector<vector<int>>& rooms, int i, int j, int dist){
-        if(i < 0 || i >= rooms.size() || j < 0 || j >= rooms[0].size() || rooms[i][j] < dist)
+    void dfs(vector<vector<int>>& rooms, int i, int j, int count){
+        if(i < 0 || i >= rooms.size() || j < 0 || j >= rooms[0].size() || rooms[i][j] < count)
             return;
             
         rooms[i][j] = dist;
