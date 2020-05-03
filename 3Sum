@@ -7,13 +7,12 @@ public:
             return res;
         
         sort(nums.begin(), nums.end());
-        int cutoff = 0;
         for(int i = 0; i < n; i++){
             if(i > 0 && nums[i] == nums[i-1]) continue;
             int a = nums[i];
-            if(a > cutoff) return res;
+            if(a > 0) return res; // The sum is 0. Hence, at least, the smallest number has to be negative.
 
-            int low = i+1, high = n-1;
+            int low = i+1, high = n-1; // Apply 2 pointer approach on each such a
             while(low < high){
                 int b = nums[low], c = nums[high];
                 if(a + b + c == 0){
