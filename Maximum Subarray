@@ -15,3 +15,19 @@ public:
         return res;
     }
 };
+
+// Same idea but slight different implementation which is useful for Maximum Circular Subarray
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        if(n == 1) return nums[0];
+        
+        int curr_max = nums[0], res = nums[0];
+        for(int i = 1; i < n; i++){
+            curr_max = max(nums[i] + curr_max, nums[i]);
+            res = max(res, curr_max);
+        }
+        return res;
+    }
+};
