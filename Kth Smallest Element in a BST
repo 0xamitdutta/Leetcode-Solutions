@@ -10,6 +10,7 @@
 class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
+        // We can use inorder traversal also to create a sorted array. But doing iteratively with stack will only process k elements.
         stack<TreeNode*> s;
         TreeNode* curr = root;
         while(curr != NULL || !s.empty()){
