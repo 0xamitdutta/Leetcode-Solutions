@@ -1,23 +1,20 @@
-class StockSpanner {
+class Solution {
 public:
-    stack<pair<int, int>> s;
-    int next(int price) {
-        int ans = 1;
-        if(s.empty() || price < s.top().first)
-            s.push({price, ans});
-        else{
-            while(!s.empty() && price >= s.top().first){
-                ans += s.top().second;
+    vector<int> dailyTemperatures(vector<int>& T) {
+        stack<pair<int, int>> s;
+        vector<int> res(T.size());
+        for(int i = 0; i < T.size(); i++){
+            while(!s.empty() && T[i] > s.top().first){
+                res[s.top().second] = i-s.top().second;
                 s.pop();
             }
-            s.push({price, ans});
+            s.push({T[i], i});
         }
-        return ans;
+        while(!s.empty()){
+            auto temp = s.top();
+            s.pop();
+            res[temp.second] = 0;
+        }
+        return res;
     }
 };
-
-/**
- * Your StockSpanner object will be instantiated and called as such:
- * StockSpanner* obj = new StockSpanner();
- * int param_1 = obj->next(price);
- */
