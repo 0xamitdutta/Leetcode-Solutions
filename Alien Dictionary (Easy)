@@ -1,3 +1,4 @@
+/* https://www.lintcode.com/problem/alien-dictionaryeasy/description */
 class Solution {
 public:
     bool isAlienSorted(vector<string> &words, string &order) {
