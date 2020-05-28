@@ -16,3 +16,10 @@
 * https://leetcode.com/problems/group-anagrams/
 
 ## Backtracking
+
+## Graphs
+### Bipartite Graphs
+* https://leetcode.com/problems/is-graph-bipartite/
+* https://leetcode.com/problems/possible-bipartition/
+
+### Topological Sorting
