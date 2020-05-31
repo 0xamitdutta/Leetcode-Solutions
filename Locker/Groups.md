@@ -1,3 +1,7 @@
+## Array (Hashmap, Hashset, etc)
+* https://leetcode.com/problems/contiguous-array/
+* https://leetcode.com/problems/subarray-sum-equals-k/submissions/
+
 ## Intervals
 1. 
 
