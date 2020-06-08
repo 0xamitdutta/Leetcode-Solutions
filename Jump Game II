@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // This is a BFS Solution where every level has nodes = curr_max
     int jump(vector<int>& nums) {
         int n = nums.size();
         if(n <= 1) return 0;
