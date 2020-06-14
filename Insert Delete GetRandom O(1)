@@ -1,4 +1,5 @@
-// Use a vector and a hashmap
+// We're using a vector just for getRandom() else unordered_set/map is sufficient for insert/delete
+
 class RandomizedSet {
 private:
     vector<int> v;
@@ -21,10 +22,15 @@ public:
         if(m.find(val) == m.end())
             return false;
         
-        int i_pointer = m[val];
-        int j_pointer = v.size()-1;
-        m[v[j_pointer]] = m[val];
-        swap(v[i_pointer], v[j_pointer]);
+        int last = v.back();
+        
+        // Update the position of last val with current val
+        m[last] = m[val];
+        
+        // Swap the position of last val and current val in vector
+        int i = m[val], j = v.size()-1; 
+        swap(v[i], v[j]);
+        
         v.pop_back();
         m.erase(val);
         return true;
