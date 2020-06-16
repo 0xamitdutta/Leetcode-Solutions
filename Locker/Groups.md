@@ -10,6 +10,8 @@
 * https://leetcode.com/problems/longest-repeating-character-replacement/
 * https://leetcode.com/problems/longest-substring-without-repeating-characters/
 * https://leetcode.com/problems/minimum-window-substring/submissions/
+* https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/description
+* https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description
 
 ## Strings
 ### Palindromes
