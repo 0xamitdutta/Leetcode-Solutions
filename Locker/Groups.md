@@ -12,6 +12,8 @@
 * https://leetcode.com/problems/minimum-window-substring/submissions/
 * https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/description
 * https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description
+* https://leetcode.com/problems/max-consecutive-ones-iii/
+* https://leetcode.com/problems/fruit-into-baskets/
 
 ## Strings
 ### Palindromes
