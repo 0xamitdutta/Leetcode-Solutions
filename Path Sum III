@@ -4,22 +4,48 @@
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+ 
+// O(n^2)
 class Solution {
 public:
     int pathSum(TreeNode* root, int sum) {
-        if(root == NULL)
-            return 0;
-        
-        return countPath(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+        if(!root) return 0;
+        return helper(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
     }
     
-    int countPath(TreeNode* root, int sum){
-        if(root == NULL)
-            return 0;
-        return (sum == root->val ? 1 : 0)
-            + countPath(root->left, sum-root->val) + countPath(root->right, sum-root->val);
+    int helper(TreeNode *root, int sum){
+        if(!root) return 0;
+        if(root->val == sum)
+            return 1 + helper(root->left, sum-root->val) + helper(root->right, sum-root->val);
+        return helper(root->left, sum-root->val) + helper(root->right, sum-root->val);
+    }
+};
+
+// O(n)
+class Solution {
+public:
+    int pathSum(TreeNode* root, int sum) {
+        unordered_map<int, int> m;
+        m[0] = 1;
+        int ans  = 0;
+        helper(root, sum, m, 0, ans);
+        return ans;
+    }
+    
+    void helper(TreeNode* root, int& sum, unordered_map<int, int>& m, int curr, int& ans){
+        if(root == NULL) return;
+        
+        curr += root->val;
+        if(m.find(curr-sum) != m.end())
+            ans += m[curr-sum];
+        m[curr]++;
+        helper(root->left, sum, m, curr, ans);
+        helper(root->right, sum, m, curr, ans);
+        m[curr]--;
     }
 };
