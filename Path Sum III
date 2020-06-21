@@ -49,3 +49,7 @@ public:
         m[curr]--;
     }
 };
+
+/* If you observe closely you'll find this question is very similar to "Subarray sum Equals K"
+   Hence If you have to count number of subarrays think of "Prefix Sum"
+*/
