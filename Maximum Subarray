@@ -1,33 +1,37 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int n = nums.size();
-        int curr_sum = 0, res = INT_MIN;
-        for(int num : nums){
-            curr_sum += num;
-            if(curr_sum > 0)
-                res = max(res, curr_sum);
-            else{
-                res = max(res, curr_sum);
+        int max_sum = INT_MIN, curr_sum = 0;
+        for(int i = 0; i < nums.size(); i++){
+            curr_sum += nums[i];
+            if(curr_sum > max_sum)
+                max_sum = curr_sum;
+            if(curr_sum < 0)
                 curr_sum = 0;
-            }
         }
-        return res;
+        return max_sum;
     }
 };
 
-// Same idea but slight different implementation which is useful for Maximum Circular Subarray
+// In case you want the starting and ending index
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        int n = nums.size();
-        if(n == 1) return nums[0];
-        
-        int curr_max = nums[0], res = nums[0];
-        for(int i = 1; i < n; i++){
-            curr_max = max(nums[i] + curr_max, nums[i]);
-            res = max(res, curr_max);
+        int max_sum = INT_MIN, curr_sum = 0;
+        int start = 0, end = 0, s = 0;
+        for(int i = 0; i < nums.size(); i++){
+            curr_sum += nums[i];
+            if(curr_sum > max_sum){
+                max_sum = curr_sum;
+                start = s;
+                end = i;
+            }
+            if(curr_sum < 0){
+                curr_sum = 0;
+                s = i+1;
+            }
         }
-        return res;
+        cout << start << " " << end << endl;
+        return max_sum;
     }
 };
