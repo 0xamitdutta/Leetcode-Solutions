@@ -9,6 +9,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+ 
+// Make sure to pass the index by reference
 class Solution {
 public:
     TreeNode* bstFromPreorder(vector<int>& preorder) {
