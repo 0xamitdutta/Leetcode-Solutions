@@ -43,3 +43,5 @@
 * https://leetcode.com/problems/possible-bipartition/
 
 ### Topological Sorting
+* https://leetcode.com/problems/course-schedule/
+* https://leetcode.com/problems/course-schedule-ii/
