@@ -1,8 +1,7 @@
 class Solution {
 public:
     int romanToInt(string s) {
-        if(s.size() == 0)
-            return 0;
+        if(s.size() == 0) return 0;
         
         unordered_map<char, int> m;
         m['I'] = 1;
@@ -12,6 +11,8 @@ public:
         m['C'] = 100;
         m['D'] = 500;
         m['M'] = 1000;
+        
+        // Basic observation : IV -> 1 gets subtracted from 5. VI -> 1 gets added to 5
         int val = m[s[s.size()-1]];
         for(int i = s.size()-2; i >= 0; i--){
             if(m[s[i]] >= m[s[i+1]])
