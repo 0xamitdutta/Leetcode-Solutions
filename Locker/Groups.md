@@ -1,6 +1,8 @@
 ## Array (Hashmap, Hashset, etc)
 * https://leetcode.com/problems/contiguous-array/
 * https://leetcode.com/problems/subarray-sum-equals-k/submissions/
+* https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+* https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
 ## Intervals
 1. 
