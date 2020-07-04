@@ -3,6 +3,8 @@
 * https://leetcode.com/problems/subarray-sum-equals-k/submissions/
 * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
+* https://leetcode.com/problems/ugly-number/
+* https://leetcode.com/problems/ugly-number-ii/
 
 ## Intervals
 1. 
