@@ -1,14 +1,11 @@
 ## Array (Hashmap, Hashset, etc)
 * https://leetcode.com/problems/maximum-subarray/
 * https://leetcode.com/problems/maximum-product-subarray/
-
 * https://leetcode.com/problems/subarray-sum-equals-k/
 * https://leetcode.com/problems/contiguous-array/
 * https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/description
-
 * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
-
 * https://leetcode.com/problems/ugly-number/
 * https://leetcode.com/problems/ugly-number-ii/
 
