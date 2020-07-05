@@ -9,6 +9,10 @@
 * https://leetcode.com/problems/ugly-number/
 * https://leetcode.com/problems/ugly-number-ii/
 
+## Binary Search
+* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+* https://leetcode.com/problems/search-in-rotated-sorted-array/
+
 ## Intervals
 1. 
 
