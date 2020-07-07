@@ -9,8 +9,6 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
- 
-// Note : preStart, inStart, inEnd, inIndex. Use these variable at correct stage.
 class Solution {
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
@@ -18,19 +16,29 @@ public:
         return helper(0, 0, inorder.size()-1, preorder, inorder);
     }
     
-    TreeNode* helper(int preStart, int inStart, int inEnd, vector<int>& preorder, vector<int>& inorder){
-        if(inStart > inEnd) return NULL;
+    TreeNode* helper(int preIndex, int inStart, int inEnd, vector<int>& preorder, vector<int>& inorder){
+        if(preIndex > preorder.size()-1 || inStart > inEnd) return NULL;
         
-        TreeNode *root = new TreeNode(preorder[preStart]);
+        TreeNode *root = new TreeNode(preorder[preIndex]);
         int inIndex = 0;
+        
+        // Can also use a hashmap in the buildTree function to map inorder values with their index
         for(int i = 0; i < inorder.size(); i++){
-            if(inorder[i] == preorder[preStart]){
+            if(inorder[i] == preorder[preIndex]){
                 inIndex = i;
                 break;
             }
         }
-        root->left = helper(preStart+1, inStart, inIndex-1, preorder, inorder);
-        root->right = helper(preStart+inIndex-inStart+1, inIndex+1, inEnd, preorder, inorder); // inIndex-inStart gives the size of left subtree
+        root->left = helper(preIndex+1, inStart, inIndex-1, preorder, inorder);
+        root->right = helper(preIndex+inIndex-inStart+1, inIndex+1, inEnd, preorder, inorder);
         return root;
     }
 };
+
+/* 
+    preIndex is the current root in preorder
+    inIndex - inEnd gives the size of left subtree
+    1 is for the current node
+    
+    Hence first node in right subtree = preIndex + (inIndex-inStart) + 1
+*/
