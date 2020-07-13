@@ -8,6 +8,14 @@
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
 * https://leetcode.com/problems/ugly-number/
 * https://leetcode.com/problems/ugly-number-ii/
+* https://www.lintcode.com/problem/wiggle-sort/description
+* https://leetcode.com/problems/hand-of-straights/submissions/
+* https://www.lintcode.com/problem/range-addition/description
+
+### Prefix Sum
+* https://leetcode.com/problems/continuous-subarray-sum/
+* https://leetcode.com/problems/subarray-sums-divisible-by-k/
+
 
 ## Binary Search
 * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
