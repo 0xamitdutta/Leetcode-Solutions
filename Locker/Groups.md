@@ -16,15 +16,7 @@
 * https://leetcode.com/problems/continuous-subarray-sum/
 * https://leetcode.com/problems/subarray-sums-divisible-by-k/
 
-
-## Binary Search
-* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-* https://leetcode.com/problems/search-in-rotated-sorted-array/
-
-## Intervals
-1. 
-
-## Sliding Window
+### Sliding Window
 * https://leetcode.com/problems/find-all-anagrams-in-a-string/
 * https://leetcode.com/problems/longest-repeating-character-replacement/
 * https://leetcode.com/problems/longest-substring-without-repeating-characters/
@@ -33,6 +25,14 @@
 * https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description
 * https://leetcode.com/problems/max-consecutive-ones-iii/
 * https://leetcode.com/problems/fruit-into-baskets/
+
+### Intervals
+1. 
+
+
+## Binary Search
+* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+* https://leetcode.com/problems/search-in-rotated-sorted-array/
 
 ## Strings
 ### Palindromes
