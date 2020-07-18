@@ -77,3 +77,5 @@
 ### Topological Sorting
 * https://leetcode.com/problems/course-schedule/
 * https://leetcode.com/problems/course-schedule-ii/
+* https://www.lintcode.com/problem/alien-dictionary/description (Not topological sort but question context is same)
+* https://www.lintcode.com/problem/alien-dictionary/description
