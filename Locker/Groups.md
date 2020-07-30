@@ -25,6 +25,8 @@
 * https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description
 * https://leetcode.com/problems/max-consecutive-ones-iii/
 * https://leetcode.com/problems/fruit-into-baskets/
+* https://leetcode.com/problems/sliding-window-maximum/
+* https://leetcode.com/problems/minimum-window-substring/
 
 ### Intervals
 1. 
