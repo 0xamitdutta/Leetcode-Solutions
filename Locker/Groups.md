@@ -12,6 +12,12 @@
 * https://leetcode.com/problems/hand-of-straights/submissions/
 * https://www.lintcode.com/problem/range-addition/description
 
+## Matrix
+* https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix
+* https://leetcode.com/problems/search-a-2d-matrix
+* https://leetcode.com/problems/search-a-2d-matrix-ii
+* https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix
+
 ### Prefix Sum
 * https://leetcode.com/problems/continuous-subarray-sum/
 * https://leetcode.com/problems/subarray-sums-divisible-by-k/
