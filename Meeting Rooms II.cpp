@@ -1,6 +1,5 @@
 /* https://www.lintcode.com/problem/meeting-rooms-ii/description */
-
-/*
+/**
  * Definition of Interval:
  * classs Interval {
  *     int start, end;
@@ -18,10 +17,11 @@ public:
         
         sort(intervals.begin(), intervals.end(), [](Interval& a, Interval& b){return a.start < b.start;});
         priority_queue<int, vector<int>, greater<int>> pq;
-        for(auto interval : intervals){
-            if(!pq.empty() && interval.start >= pq.top())
+        pq.push(intervals[0].end);
+        for(int i = 1; i < intervals.size(); i++){
+            if(intervals[i].start >= pq.top())
                 pq.pop();
-            pq.push(interval.end);
+            pq.push(intervals[i].end);
         }
         return pq.size();
     }
