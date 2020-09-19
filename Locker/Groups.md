@@ -19,6 +19,8 @@
 * https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix
 * https://leetcode.com/problems/count-submatrices-with-all-ones/
 * https://leetcode.com/problems/count-square-submatrices-with-all-ones/
+* https://leetcode.com/problems/minimum-path-sum/
+* https://leetcode.com/problems/minimum-falling-path-sum/
 
 ### Prefix Sum
 * https://leetcode.com/problems/continuous-subarray-sum/
