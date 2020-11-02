@@ -35,6 +35,11 @@ class Solution {
         isBSTpair() : isBST(true), minm(INT_MAX), maxm(INT_MIN) {}
     };
 public:
+    bool isValidBST(TreeNode* root) {
+        BSTpair bp = isBST(root);
+        return bp.isBST;
+    }
+    
     BSTpair isBST(root){
         if(!root){
             BSTpair bp;
@@ -48,10 +53,5 @@ public:
         cp.minm = min(root->val, min(lp.minm, rp.minm));
         cp.maxm = max(root->val, max(lp.maxm, rp.maxm));
         return cp;
-    }
-    
-    bool isValidBST(TreeNode* root) {
-        BSTpair bp = isBST(root);
-        return bp.isBST;
     }
 };
