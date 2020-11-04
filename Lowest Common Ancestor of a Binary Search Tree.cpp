@@ -25,6 +25,7 @@ public:
 };
 
 //ITERATIVE
+// Use top-down dfs for this and bottom-up dfs for bt
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
