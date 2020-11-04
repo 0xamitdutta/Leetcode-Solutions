@@ -9,6 +9,7 @@
  */
  
 // Search for p and q. If p exist in root->left and q exist in root->right or vice-versa return root.
+// Use bottomu-up dfs for this and top-down dfs for bst
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
