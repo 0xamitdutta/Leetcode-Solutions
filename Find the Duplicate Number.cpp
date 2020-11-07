@@ -1,3 +1,5 @@
+// Try to change the nums array to linked list. The linked list will contain a cycle and the beginning of the loop is the Duplicate
+
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
