@@ -37,12 +37,9 @@ public:
         auto l = helper(root->left, A, B);
         auto r = helper(root->right, A, B);
         
-        if(root == A) {
-            foundA = true;
-            return root;
-        }
-        if(root == B) {
-            foundB = true;
+        if(root == A || root == B) {
+            if(root == A) foundA = true;
+            if(root == B) foundB = true;
             return root;
         }
         if(l && r) return root;
