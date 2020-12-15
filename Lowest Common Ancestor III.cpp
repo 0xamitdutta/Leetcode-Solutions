@@ -1,3 +1,6 @@
+// https://www.lintcode.com/problem/lowest-common-ancestor-iii/description
+// Uses Bottom Up recursion rather than the normal Top Down way
+
 /**
  * Definition of TreeNode:
  * class TreeNode {
