@@ -88,6 +88,15 @@
 * https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
 
 ## Graphs
+### DFS
+* https://leetcode.com/problems/all-paths-from-source-to-target/
+* https://leetcode.com/problems/pacific-atlantic-water-flow/
+* https://leetcode.com/problems/reconstruct-itinerary/
+* https://leetcode.com/problems/network-delay-time/
+* https://leetcode.com/problems/couples-holding-hands/
+* https://leetcode.com/problems/redundant-connection/
+* https://leetcode.com/problems/redundant-connection-ii/
+
 ### BFS
 * https://leetcode.com/problems/shortest-path-in-binary-matrix/
 * https://leetcode.com/problems/rotting-oranges/
