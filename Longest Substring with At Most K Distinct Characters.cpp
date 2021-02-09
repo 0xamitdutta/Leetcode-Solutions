@@ -4,22 +4,20 @@ public:
     int lengthOfLongestSubstringKDistinct(string &s, int k) {
         if(k == 0) return 0;
         
-        unordered_map<char, int> m;
-        int res = 0, counter = 0;
-        int i = 0, j = 0;
-        while(j < s.size()){
-            m[s[j]]++;
-            if(m[s[j]] == 1) 
-                counter++;
-            j++;
-            while(counter > k){
-                m[s[i]]--;
-                if(m[s[i]] == 0) 
-                    counter--;
-                i++;
+        unordered_map<char, int> hash;
+        int len = 0, distinct = 0;
+        for(int i = 0, j = 0; i < s.size(); i++){
+            if(!hash[s[i]])
+                distinct++;
+            hash[s[i]]++;
+            while(distinct > k){
+                hash[s[j]]--;
+                if(hash[s[j]] == 0)
+                    distinct--;
+                j++;
             }
-            res = max(res, j-i);
+            len = max(len, i-j+1);
         }
-        return res;
+        return len;
     }
 };
