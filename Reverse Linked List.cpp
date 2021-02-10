@@ -28,8 +28,7 @@ public:
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(!head) return NULL;
-        if(!head->next) return head;
+        if(!head || !head->next) return head;
         
         ListNode* p = reverseList(head->next);
         head->next->next = head;
