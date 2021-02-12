@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         if(n == 0) return 0;
         
-        int dp[n];
+        int dp[n]; // dp(i) contains longest Increasing Subsequence ending at the index i
         int max_len = 1;
         for(int i = 0; i < n; i++)
             dp[i] = 1;
