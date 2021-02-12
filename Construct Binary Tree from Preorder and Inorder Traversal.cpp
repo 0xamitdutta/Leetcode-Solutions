@@ -36,9 +36,7 @@ public:
 };
 
 /* 
-    preIndex is the current root in preorder
-    inIndex - inEnd gives the size of left subtree
-    1 is for the current node
-    
-    Hence first node in right subtree = preIndex + (inIndex-inStart) + 1
+Way to get Preorder's index in Right Subtree:
+    Preorder Index + Elements in Left Subtree
+    Preorder Index + (InIndex - InStart + 1)
 */
