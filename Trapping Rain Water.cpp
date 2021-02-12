@@ -3,7 +3,7 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-        int total = 0;
+        int res = 0;
         for(int i = 0; i < n; i++){
             int curr = height[i];
             int left = 0, right = 0;
@@ -12,9 +12,9 @@ public:
             for(int j = i+1; j < n; j++)
                 right = max(right, height[j]);
             if(curr < left && curr < right)
-                total += min(left, right) - curr;
+                res += min(left, right) - curr;
         }
-        return total;
+        return res;
     }
 };
 
@@ -23,21 +23,27 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-        vector<int> left(n), right(n);
-        for(int i = 1; i < n; i++){
-            int left_max = max(left_max, height[i-1]);
-            left[i] = left_max;
-        }
-        for(int i = n-2; i >= 0; i--){
-            int right_max = max(right_max, height[i+1]);
-            right[i] = right_max;
-        }
+        if(n == 0) return 0;
+        vector<int> left(n), right(n); 
+        // Left stores the maximum height of buiding to the left of i, including i. Right stores the maximum height of building to the right of i, including i
         
-        int total = 0;
+        left[0] = 0;
+        int left_max = height[0];
+        for(int i = 1; i < n; i++){
+            left[i] = left_max;
+            left_max = max(left_max, height[i]);
+        }
+        right[n-1] = 0;
+        int right_max = height[n-1];
+        for(int i = n-2; i >= 0; i--){
+            right[i] = right_max;
+            right_max = max(right_max, height[i]);
+        }        
+        int res = 0;
         for(int i = 1; i < n-1; i++){
             if(left[i] > height[i] && right[i] > height[i])
-                total = total + min(left[i], right[i]) - height[i];
+                res += min(left[i], right[i]) - height[i];
         }
-        return total;
+        return res;
     }
 };
