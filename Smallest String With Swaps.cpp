@@ -1,4 +1,4 @@
-// Try to think the pairs as nodes having a connection. Find the connected components and sort them.
+// Try to think the pairs as nodes having a connection. Find the connected components and sort all nodes within a component.
 
 class Solution {
 public:
