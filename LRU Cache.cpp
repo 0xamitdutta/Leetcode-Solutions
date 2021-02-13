@@ -4,14 +4,13 @@ class LRUCache {
     unordered_map<int, list<pair<int, int>>::iterator> m; // For searching in O(1)
 public:
     // Inilializer list
-    LRUCache(int capacity) : size(capacity){
-    }
+    LRUCache(int capacity) : size(capacity) {}
     
     int get(int key) {
         if(m.find(key) == m.end())
             return -1;
         
-        li.splice(li.begin(), li, m[key]); 
+        li.splice(li.begin(), li, m[key]); // 1st par -> iterator position where element/s are pasted, 2nd par -> from where element/s are taken from
         return m[key]->second;
     }
     
