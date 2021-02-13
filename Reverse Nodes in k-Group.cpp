@@ -9,7 +9,7 @@
  * };
  */
  
-// Combination of Reverse Linked List II and iteration process
+// Prerequisite Reverse Linked List II
 class Solution {
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
