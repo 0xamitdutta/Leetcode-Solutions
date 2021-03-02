@@ -1,7 +1,7 @@
 /*
 Recurrence Relation:
 LCS(A, B, m, n) = LCS(A, B, m-1, n-1) + 1 if A[m-1] == B[n-1]
-LCS(A, B, m, m) = 0 if A[m-1] != B[m-1]
+LCS(A, B, m, m) = max( LCS(A, B, m-1, n), LCS(A, B, m, n-1) ) if A[m-1] != B[m-1]
 */
 
 class Solution {
