@@ -113,3 +113,9 @@
 * https://leetcode.com/problems/course-schedule-ii/
 * https://www.lintcode.com/problem/alien-dictionary/description (Not topological sort but question context is same)
 * https://www.lintcode.com/problem/alien-dictionary/description
+
+### DP
+* https://leetcode.com/problems/word-break
+* https://leetcode.com/problems/longest-increasing-subsequence
+* https://leetcode.com/problems/perfect-squares/
+* https://leetcode.com/problems/decode-ways/
