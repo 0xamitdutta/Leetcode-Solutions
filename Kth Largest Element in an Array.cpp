@@ -4,26 +4,28 @@
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        k = nums.size()-k+1;
-        return quickselect(nums, 0, nums.size()-1, k);
-    }
-    
-    int quickselect(vector<int>& nums, int low, int high, int k){
-        int pivot = partition(nums, low, high);
-        if(pivot-low+1 < k)
-            return quickselect(nums, pivot+1, high, k-pivot-1+low);
-        if(pivot-low+1 > k)
-            return quickselect(nums, low, pivot-1, k);
-        if(pivot-low+1 == k)
-            return nums[pivot];
+        int low = 0, high = nums.size()-1;
+        k = nums.size() - k + 1;
+        while(low <= high){
+            int pivot = partition(nums, low, high);
+            if(pivot == k-1){
+                return nums[pivot];
+            }
+            else if(pivot > k-1){
+                high = pivot - 1;
+            }
+            else{
+                low = pivot + 1;
+            }
+        }
         return -1;
     }
     
     int partition(vector<int>& nums, int low, int high){
         int x = nums[high];
         int i = low;
-        for(int j = low; j < high; j++){
-            if(nums[j] <= x){
+        for(int j = low; j <= high; j++){
+            if(nums[j] < x){
                 swap(nums[i], nums[j]);
                 i++;
             }
@@ -37,33 +39,31 @@ public:
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        k = nums.size()-k+1;
-        return quickselect(nums, 0, nums.size()-1, k);
-    }
-    
-    int quickselect(vector<int>& nums, int low, int high, int k){
-        int pivot = rand_partition(nums, low, high);
-        if(pivot-low+1 < k)
-            return quickselect(nums, pivot+1, high, k-pivot-1+low);
-        if(pivot-low+1 > k)
-            return quickselect(nums, low, pivot-1, k);
-        if(pivot-low+1 == k)
-            return nums[pivot];
+        int low = 0, high = nums.size()-1;
+        k = nums.size() - k + 1;
+        while(low <= high){
+            int pivot = partition(nums, low, high);
+            if(pivot == k-1){
+                return nums[pivot];
+            }
+            else if(pivot > k-1){
+                high = pivot - 1;
+            }
+            else{
+                low = pivot + 1;
+            }
+        }
         return -1;
     }
     
-    int rand_partition(vector<int>& nums, int low, int high){
-        int n = high-low+1;
-        int x = rand() % n;
-        swap(nums[low+x], nums[high]);
-        return partition(nums, low, high);
-    }
-    
     int partition(vector<int>& nums, int low, int high){
+        int r = rand() % (high-low+1);
+        swap(nums[low+r], nums[high]);
+        
         int x = nums[high];
         int i = low;
-        for(int j = low; j < high; j++){
-            if(nums[j] <= x){
+        for(int j = low; j <= high; j++){
+            if(nums[j] < x){
                 swap(nums[i], nums[j]);
                 i++;
             }
