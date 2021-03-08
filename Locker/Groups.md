@@ -1,4 +1,6 @@
-1. [Array (Hashmap, Hashset, etc)](#arrays)
+## Table Of Contents
+
+* [Array (Hashmap, Hashset, etc)](#arrays)
 
 <a name="arrays"></a>
 ## Array (Hashmap, Hashset, etc)
