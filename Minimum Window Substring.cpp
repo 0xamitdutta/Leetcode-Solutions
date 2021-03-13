@@ -3,25 +3,32 @@ public:
     string minWindow(string s, string t) {
         if(s.size() == 0 || t.size() == 0) return "";
         
-        unordered_map<char, int> v;
-        for(char c : t)
-            v[c]++;
-        int i = 0, j = 0, left_i = 0;
-        int min_len = INT_MAX, counter = t.size();
-        while(j < s.size()){
-            if(v[s[j]] > 0) counter--;
-            v[s[j]]--;
-            j++;
+        // Map all characters in t with their frequencies
+        unordered_map<char, int> hash;
+        for(char& c : t){
+            hash[c]++;
+        }
+        int counter = t.size(); // When counter becomes 0, we know a substring in s contains t
+        int min_len = INT_MAX, start_ind = 0; // These two var helps to find the minimum among all possible substrings
+        for(int i = 0, j = 0; i < s.size(); i++){
+            if(hash[s[i]] > 0){
+                counter--;
+            }
+            hash[s[i]]--;
+            
+            // Keep shrinking while counter is still 0, i.e a smaller substring is possible
             while(counter == 0){
-                if(j-i < min_len){
-                    min_len = j-i;
-                    left_i = i;
+                if(i-j+1 < min_len){
+                    min_len = i-j+1;
+                    start_ind = j;
                 }
-                v[s[i]]++;
-                if(v[s[i]] > 0) counter++;
-                i++;
+                hash[s[j]]++;
+                if(hash[s[j]] > 0){
+                    counter++;
+                }
+                j++;
             }
         }
-        return min_len == INT_MAX ? "" : s.substr(left_i, min_len);
+        return min_len == INT_MAX ? "" : s.substr(start_ind, min_len);
     }
 };
