@@ -1,8 +1,3 @@
-## Table Of Contents
-
-* [Array (Hashmap, Hashset, etc)](#arrays)
-
-<a name="arrays"></a>
 ## Array (Hashmap, Hashset, etc)
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
 * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
