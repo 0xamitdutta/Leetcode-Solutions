@@ -21,6 +21,6 @@ public:
                 dp[i][i+d] = max(piles[i] - dp[i+1][i+d], piles[i+d] - dp[i][i+d-1]);
             }
         }
-        return dp[0][n-1];
+        return dp[0][n-1] > 0;
     }
 };
