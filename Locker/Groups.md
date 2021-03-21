@@ -95,24 +95,38 @@
 * https://leetcode.com/problems/all-paths-from-source-to-target/
 * https://leetcode.com/problems/pacific-atlantic-water-flow/
 * https://leetcode.com/problems/reconstruct-itinerary/
-* https://leetcode.com/problems/network-delay-time/
+
+**Union Find**
 * https://leetcode.com/problems/couples-holding-hands/
 * https://leetcode.com/problems/redundant-connection/
 * https://leetcode.com/problems/redundant-connection-ii/
 
-### BFS
-* https://leetcode.com/problems/shortest-path-in-binary-matrix/
-* https://leetcode.com/problems/rotting-oranges/
+**Djikstra**
+* https://leetcode.com/problems/network-delay-time/
 
-### Bipartite Graphs
+**Articulation Points**
+* https://leetcode.com/problems/critical-connections-in-a-network/
+
+**Bipartite Graphs**
 * https://leetcode.com/problems/is-graph-bipartite/
 * https://leetcode.com/problems/possible-bipartition/
 
-### Topological Sorting
+**Topological Sorting**
 * https://leetcode.com/problems/course-schedule/
 * https://leetcode.com/problems/course-schedule-ii/
 * https://www.lintcode.com/problem/alien-dictionary/description (Not topological sort but question context is same)
 * https://www.lintcode.com/problem/alien-dictionary/description
+
+### BFS
+* https://leetcode.com/problems/shortest-path-in-binary-matrix/
+
+**Multi Source BFS**
+* https://leetcode.com/problems/01-matrix/
+* https://leetcode.com/problems/rotting-oranges/
+
+**0-1 BFS**
+* https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo)
+* https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/
 
 ### DP
 * https://leetcode.com/problems/word-break
