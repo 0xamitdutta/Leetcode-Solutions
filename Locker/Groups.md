@@ -1,7 +1,7 @@
 ## Array (Hashmap, Hashset, etc)
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
 * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
-* https://leetcode.com/problems/maximum-subarray/
+* https://leetcode.com/problems/maximum-subarray/ - [Solution](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Sum%20Subarray.cpp)
 * https://leetcode.com/problems/maximum-product-subarray/
 * https://leetcode.com/problems/subarray-sum-equals-k/
 * https://leetcode.com/problems/contiguous-array/
