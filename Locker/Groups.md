@@ -8,13 +8,13 @@
 * https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/description
 * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 * https://leetcode.com/problems/find-all-duplicates-in-an-array/
+* https://leetcode.com/problems/next-permutation/
+* https://www.geeksforgeeks.org/counting-inversions-using-set-in-c-stl/
 * https://leetcode.com/problems/ugly-number/
 * https://leetcode.com/problems/ugly-number-ii/
 * https://leetcode.com/problems/trapping-rain-water/
 * https://leetcode.com/problems/container-with-most-water/
-* https://www.lintcode.com/problem/wiggle-sort/description
-* https://leetcode.com/problems/hand-of-straights/submissions/
-* https://www.lintcode.com/problem/range-addition/description
+* https://www.lintcode.com/problem/wiggle-sort/description/
 
 ## Matrix
 * https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix
