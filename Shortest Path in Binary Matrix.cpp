@@ -19,7 +19,7 @@ public:
                 int y = q.front().second;
                 q.pop();
                 if(x == n-1 && y == n-1)
-                    return ans;
+                    return len;
                 for(int i = 0; i < 8; i++){
                     int new_x = x + x_dir[i];
                     int new_y = y + y_dir[i];
