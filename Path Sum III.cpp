@@ -13,16 +13,16 @@
 // O(n^2)
 class Solution {
 public:
-    int pathSum(TreeNode* root, int sum) {
+    int pathSum(TreeNode* root, int targetSum) {
         if(!root) return 0;
-        return helper(root, sum) + pathSum(root->left, sum) + pathSum(root->right, sum);
+        return dfs(root, 0, targetSum) + pathSum(root->left, targetSum) + pathSum(root->right, targetSum);
     }
     
-    int helper(TreeNode *root, int sum){
+    int dfs(TreeNode* root, int sum, int& targetSum) {
         if(!root) return 0;
-        if(root->val == sum)
-            return 1 + helper(root->left, sum-root->val) + helper(root->right, sum-root->val);
-        return helper(root->left, sum-root->val) + helper(root->right, sum-root->val);
+        
+        sum += root->val;
+        return (sum == targetSum ? 1 : 0) + dfs(root->left, sum, targetSum) + dfs(root->right, sum, targetSum);
     }
 };
 
