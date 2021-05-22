@@ -29,24 +29,25 @@ public:
 // O(n)
 class Solution {
 public:
-    int pathSum(TreeNode* root, int sum) {
-        unordered_map<int, int> m;
+    unordered_map<int, int> m;
+    int pathSum(TreeNode* root, int targetSum) {
         m[0] = 1;
-        int ans  = 0;
-        helper(root, sum, m, 0, ans);
-        return ans;
+        int count = 0;
+        dfs(root, 0, count, targetSum);
+        return count;
     }
     
-    void helper(TreeNode* root, int& sum, unordered_map<int, int>& m, int curr, int& ans){
-        if(root == NULL) return;
+    void dfs(TreeNode* root, int sum, int& count, int targetSum) {
+        if(!root) return;
         
-        curr += root->val;
-        if(m.find(curr-sum) != m.end())
-            ans += m[curr-sum];
-        m[curr]++;
-        helper(root->left, sum, m, curr, ans);
-        helper(root->right, sum, m, curr, ans);
-        m[curr]--;
+        sum += root->val;
+        if(m.count(sum - targetSum)) {
+            count += m[sum - targetSum];
+        }
+        m[sum]++;
+        dfs(root->left, sum, count, targetSum);
+        dfs(root->right, sum, count, targetSum);
+        m[sum]--;
     }
 };
 
