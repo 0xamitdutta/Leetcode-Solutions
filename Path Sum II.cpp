@@ -4,31 +4,30 @@
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
 class Solution {
 public:
-    vector<vector<int>> pathSum(TreeNode* root, int sum) {
-        vector<vector<int>> res;
-        if(root == NULL)
-            return res;
-        
-        vector<int> curr;
-        countPath(root, sum, curr, res);
+    vector<vector<int>> res;
+    vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
+        dfs(root, 0, targetSum, {});
         return res;
     }
     
-    void countPath(TreeNode* root, int sum, vector<int>& curr, vector<vector<int>>& res){
-        if(root == NULL)
-            return;
+    void dfs(TreeNode* root, int sum, int& targetSum, vector<int> curr) {
+        if(!root) return;
         
+        sum += root->val;
         curr.push_back(root->val);
-        if(root->left == NULL && root->right == NULL && root->val == sum)
+        if(!root->left && !root->right && sum == targetSum){
             res.push_back(curr);
+            return;
+        }
         
-        countPath(root->left, sum-root->val, curr, res);
-        countPath(root->right, sum-root->val, curr, res);
-        curr.pop_back();
+        dfs(root->left, sum, targetSum, curr);
+        dfs(root->right, sum, targetSum, curr);
     }
 };
