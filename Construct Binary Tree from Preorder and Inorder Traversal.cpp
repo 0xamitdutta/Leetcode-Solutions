@@ -17,7 +17,7 @@ public:
     }
     
     TreeNode* helper(int preIndex, int inStart, int inEnd, vector<int>& preorder, vector<int>& inorder){
-        if(preIndex > preorder.size()-1 || inStart > inEnd) return NULL;
+        if(preIndex >= preorder.size() || inStart > inEnd) return NULL;
         
         TreeNode *root = new TreeNode(preorder[preIndex]);
         int inIndex = 0;
