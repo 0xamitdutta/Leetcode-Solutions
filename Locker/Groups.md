@@ -90,6 +90,7 @@
 * https://leetcode.com/problems/subtree-of-another-tree/
 * https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
 * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+* https://leetcode.com/problems/validate-binary-search-tree/
 * https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
 * https://www.geeksforgeeks.org/bottom-view-binary-tree/
 * https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
