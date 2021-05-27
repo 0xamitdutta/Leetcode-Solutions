@@ -12,7 +12,7 @@
 * https://www.geeksforgeeks.org/counting-inversions-using-set-in-c-stl/
 * https://leetcode.com/problems/ugly-number/
 * https://leetcode.com/problems/ugly-number-ii/
-* * https://leetcode.com/problems/subarray-sum-equals-k/
+* https://leetcode.com/problems/subarray-sum-equals-k/
 * https://leetcode.com/problems/trapping-rain-water/
 * https://leetcode.com/problems/container-with-most-water/
 * https://www.lintcode.com/problem/wiggle-sort/description/
