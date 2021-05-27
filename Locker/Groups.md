@@ -92,6 +92,7 @@
 * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 * https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/
 * https://www.geeksforgeeks.org/bottom-view-binary-tree/
+* https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 * https://www.lintcode.com/problem/binary-tree-vertical-order-traversal/description
 * https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
 * https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
