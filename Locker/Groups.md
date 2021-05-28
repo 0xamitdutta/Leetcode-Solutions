@@ -1,21 +1,22 @@
-## Array (Hashmap, Hashset, etc)
-* https://leetcode.com/problems/find-all-duplicates-in-an-array/
-* https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
-* https://leetcode.com/problems/maximum-subarray/ - [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Sum%20Subarray.cpp)
-* https://leetcode.com/problems/maximum-product-subarray/ - [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Product%20Subarray.cpp)
-* https://leetcode.com/problems/subarray-sum-equals-k/
-* https://leetcode.com/problems/contiguous-array/
-* https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/description
-* https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
-* https://leetcode.com/problems/find-all-duplicates-in-an-array/
-* https://leetcode.com/problems/next-permutation/
-* https://www.geeksforgeeks.org/counting-inversions-using-set-in-c-stl/
-* https://leetcode.com/problems/ugly-number/
-* https://leetcode.com/problems/ugly-number-ii/
-* https://leetcode.com/problems/subarray-sum-equals-k/
-* https://leetcode.com/problems/trapping-rain-water/
-* https://leetcode.com/problems/container-with-most-water/
-* https://www.lintcode.com/problem/wiggle-sort/description/
+| **Array (Hashmap, Hashset, etc)**  | **Solutions** |
+| ------------- | ------------- |
+| https://leetcode.com/problems/find-all-duplicates-in-an-array/  |   |
+| https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/  |  |
+| https://leetcode.com/problems/maximum-subarray/ | [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Sum%20Subarray.cpp) |
+| https://leetcode.com/problems/maximum-product-subarray/ | [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Product%20Subarray.cpp) |
+| https://leetcode.com/problems/subarray-sum-equals-k/ | |
+| https://leetcode.com/problems/contiguous-array/ | |
+| https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/description | |
+| https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/ | |
+| https://leetcode.com/problems/find-all-duplicates-in-an-array/ | |
+| https://leetcode.com/problems/next-permutation/ | |
+| https://www.geeksforgeeks.org/counting-inversions-using-set-in-c-stl/ | |
+| https://leetcode.com/problems/ugly-number/ | |
+| https://leetcode.com/problems/ugly-number-ii/ | |
+| https://leetcode.com/problems/subarray-sum-equals-k/ | |
+| https://leetcode.com/problems/trapping-rain-water/ | |
+| https://leetcode.com/problems/container-with-most-water/ | |
+| https://www.lintcode.com/problem/wiggle-sort/description/ | |
 
 ## Matrix
 * https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix
