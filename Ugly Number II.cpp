@@ -3,8 +3,12 @@ public:
     int nthUglyNumber(int n) {
         vector<int> ugli(n);
         ugli[0] = 1;
+        /* 
+            The next number has to be the the smallest number among all the existing numbers multiplied by 2, 3, 5 that isn't in the list already.
+            We could iterare from 0 to i-1 for each i and multiply every number with 2, 3 and 5 to find smallest. But that's O(n^2).
+        */
         
-        // Pointers for count of 2, 3 and 5
+        // We can do it in O(n) if we make use of Pointers of 2, 3 and 5
         int p2 = 0, p3 = 0, p5 = 0;
         
         int n2 = 2*ugli[p2], n3 = 3*ugli[p3], n5 = 5*ugli[p5];
