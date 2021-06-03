@@ -62,10 +62,15 @@
 | https://leetcode.com/problems/word-break/ | |
 | https://leetcode.com/problems/longest-common-subsequence/ | |
 | https://leetcode.com/problems/longest-increasing-subsequence/ | |
+| LIS Similar | |
+| https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/dynamic-programming/lbs-official/ojquestion| |
+| https://leetcode.com/problems/uncrossed-lines/ | |
+| https://leetcode.com/problems/perfect-squares/ | |
+| https://leetcode.com/problems/russian-doll-envelopes/ | |
+| - | - |
 | https://leetcode.com/problems/house-robber/ | |
 | https://leetcode.com/problems/house-robber-ii/ | |
 | https://leetcode.com/problems/house-robber-iii/ | |
-| https://leetcode.com/problems/perfect-squares/ | |
 | https://leetcode.com/problems/decode-ways/ | |
 
 ## Strings
