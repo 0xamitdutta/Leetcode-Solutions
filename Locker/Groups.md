@@ -1,5 +1,5 @@
 | **Array (Hashmap, Hashset, etc)**  | **Solutions** |
-| ------------- | ------------- |
+| --- | --- |
 | https://leetcode.com/problems/find-all-duplicates-in-an-array/  |   |
 | https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/  |  |
 | https://leetcode.com/problems/maximum-subarray/ | [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Sum%20Subarray.cpp) |
@@ -56,6 +56,17 @@
 * https://leetcode.com/problems/search-in-rotated-sorted-array/
 * https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
 * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+| **DP** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/word-break/ | |
+| https://leetcode.com/problems/longest-common-subsequence/ | |
+| https://leetcode.com/problems/longest-increasing-subsequence/ | |
+| https://leetcode.com/problems/house-robber/ | |
+| https://leetcode.com/problems/house-robber-ii/ | |
+| https://leetcode.com/problems/house-robber-iii/ | |
+| https://leetcode.com/problems/perfect-squares/ | |
+| https://leetcode.com/problems/decode-ways/ | |
 
 ## Strings
 ### Palindromes
@@ -136,8 +147,3 @@
 * https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo)
 * https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/
 
-### DP
-* https://leetcode.com/problems/word-break
-* https://leetcode.com/problems/longest-increasing-subsequence
-* https://leetcode.com/problems/perfect-squares/
-* https://leetcode.com/problems/decode-ways/
