@@ -49,13 +49,13 @@
 * https://leetcode.com/problems/non-overlapping-intervals/
 * https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
 
-
-## Binary Search
-* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-* https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
-* https://leetcode.com/problems/search-in-rotated-sorted-array/
-* https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
-* https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+| **Binary Search** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | |
+| https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/ | |
+| https://leetcode.com/problems/search-in-rotated-sorted-array/ | |
+| https://leetcode.com/problems/search-in-rotated-sorted-array-ii/ | |
+| https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/ | |
 
 | **DP** | **Solutions** |
 | --- | --- |
