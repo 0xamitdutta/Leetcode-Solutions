@@ -3,7 +3,7 @@ public:
     int dp[501][501][2];
     bool stoneGame(vector<int>& piles) {
         memset(dp, -1, sizeof(dp));
-        return helper(0, piles.size()-1, piles, 1);
+        return helper(0, piles.size()-1, piles, 1) > 0;
     }
     
     int helper(int l, int r, vector<int>& piles, int ID) {
