@@ -1,26 +1,23 @@
 class Solution {
 public:
+    int dp[501][501][2];
     bool stoneGame(vector<int>& piles) {
-        int n = piles.size();
+        memset(dp, -1, sizeof(dp));
+        return helper(0, piles.size()-1, piles, 1);
+    }
+    
+    int helper(int l, int r, vector<int>& piles, int ID) {
+        if(r < l) return 0;
+        if(dp[l][r][ID] != -1) return dp[l][r][ID];
         
-        // dp[i][j] stores the largest no. of stones you collect more than your opponent from piles i to j
-        int dp[n][n];
-        memset(dp, 0, sizeof(dp));
-        // You collect all stones from i to i
-        for(int i = 0; i < n; i++){
-            dp[i][i] = piles[i];
+        int next = ID ^ 1;
+        int score = 0;
+        if(ID == 1) {
+            dp[l][r][1] = max(piles[l] + helper(l+1, r, piles, next), piles[r] + helper(l, r-1, piles, next));
         }
-        /*
-        For a pile from i to j. Let the distance is d
-        Then dp[i][j] = max(Select i - Opp. selects the best from i+1 to j, Select j - Opp. selects  the best from i to j-1.
-        */
-        
-        // Filling dp matrix in diagonal manner. Keep increasing gap and reducing bottom rows
-        for(int d = 1; d < n; d++){
-            for(int i = 0; i < n-d; i++){
-                dp[i][i+d] = max(piles[i] - dp[i+1][i+d], piles[i+d] - dp[i][i+d-1]);
-            }
+        else {
+            dp[l][r][0] = min(-piles[l] + helper(l+1, r, piles, next), -piles[r] + helper(l, r-1, piles, next));
         }
-        return dp[0][n-1] > 0;
+        return dp[l][r][ID];
     }
 };
