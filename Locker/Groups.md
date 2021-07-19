@@ -102,7 +102,9 @@
 * https://leetcode.com/problems/path-sum-iii
 * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
 * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
+* https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
 * https://leetcode.com/problems/diameter-of-binary-tree
+* https://leetcode.com/problems/diameter-of-n-ary-tree/
 * https://leetcode.com/problems/same-tree/
 * https://leetcode.com/problems/subtree-of-another-tree/
 * https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
