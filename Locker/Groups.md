@@ -116,6 +116,7 @@
 * https://www.lintcode.com/problem/binary-tree-vertical-order-traversal/description
 * https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
 * https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
+* https://www.lintcode.com/en/old/problem/closest-leaf-in-a-binary-tree/
 
 
 ## Graphs
