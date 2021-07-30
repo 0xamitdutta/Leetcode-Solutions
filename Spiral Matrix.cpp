@@ -17,19 +17,38 @@ public:
                 res.push_back(matrix[i][c2]);
             c2--;
             
-            // The if condition is there when r1 == r2. In such case after the above 2 for loops the while loop is violated.
-            if(r1 <= r2){
-                for(int j = c2; j >= c1; j--)
-                    res.push_back(matrix[r2][j]);
-            }
+            if(r1 > r2 || c1 > c2) break;
+            
+            for(int j = c2; j >= c1; j--)
+                res.push_back(matrix[r2][j]);
             r2--;
             
-            // The if condition is there when r1 == r2. In such case after the above 2 for loops the while loop is violated.
-            if(c1 <= c2){
-                for(int i = r2; i >= r1; i--)
-                    res.push_back(matrix[i][c1]);
-            }
+            for(int i = r2; i >= r1; i--)
+                res.push_back(matrix[i][c1]);
             c1++;
+        }
+        return res;
+    }
+};
+
+// 1 for loop instead of 4
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int m = matrix.size(), n = matrix[0].size();
+        vector<vector<int>> dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        vector<int> traverseCount = {n, m-1};
+        
+        int ir = 0, ic = -1;
+        int idir = 0;
+        vector<int> res;
+        while(res.size() < m*n) {
+            for(int i = 0; i < traverseCount[idir % 2]; i++) {
+                ir += dirs[idir][0], ic += dirs[idir][1];
+                res.push_back(matrix[ir][ic]);
+            }
+            traverseCount[idir % 2]--;
+            idir = (idir + 1) % 4;
         }
         return res;
     }
