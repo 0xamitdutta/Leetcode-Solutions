@@ -31,17 +31,18 @@
 * https://leetcode.com/problems/continuous-subarray-sum/
 * https://leetcode.com/problems/subarray-sums-divisible-by-k/
 
-### Sliding Window
-* https://leetcode.com/problems/find-all-anagrams-in-a-string/
-* https://leetcode.com/problems/longest-repeating-character-replacement/
-* https://leetcode.com/problems/longest-substring-without-repeating-characters/
-* https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/description
-* https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description
-* https://leetcode.com/problems/subarrays-with-k-different-integers/
-* https://leetcode.com/problems/max-consecutive-ones-iii/
-* https://leetcode.com/problems/fruit-into-baskets/
-* https://leetcode.com/problems/sliding-window-maximum/
-* https://leetcode.com/problems/minimum-window-substring/
+| **Sliding Window** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/find-all-anagrams-in-a-string/ | |
+| https://leetcode.com/problems/longest-repeating-character-replacement/ | |
+| https://leetcode.com/problems/longest-substring-without-repeating-characters/ | |
+| https://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/description | |
+| https://www.lintcode.com/problem/longest-substring-with-at-most-two-distinct-characters/description | |
+| https://leetcode.com/problems/subarrays-with-k-different-integers/ | |
+| https://leetcode.com/problems/max-consecutive-ones-iii/ | |
+| https://leetcode.com/problems/fruit-into-baskets/ | |
+| https://leetcode.com/problems/sliding-window-maximum/ | |
+| https://leetcode.com/problems/minimum-window-substring/ | |
 
 ### Intervals
 * https://leetcode.com/problems/merge-intervals/
