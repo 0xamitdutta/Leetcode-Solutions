@@ -129,6 +129,7 @@
 * https://leetcode.com/problems/pacific-atlantic-water-flow/
 * https://leetcode.com/problems/all-paths-from-source-to-target/
 * https://leetcode.com/problems/reconstruct-itinerary/
+* lintcode.com/en/old/problem/graph-valid-tree/
 
 **Union Find**
 * https://leetcode.com/problems/couples-holding-hands/
