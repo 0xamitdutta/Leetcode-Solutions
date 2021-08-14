@@ -1,38 +1,28 @@
 class LRUCache {
+    list<int> l;
+    unordered_map<int, list<int>::iterator> hash;
     int size;
-    list<pair<int, int>> li; // For removal in O(1) by cache eviction policy
-    unordered_map<int, list<pair<int, int>>::iterator> m; // For searching in O(1)
-public:
-    // Inilializer list
-    LRUCache(int capacity) : size(capacity) {}
-    
-    int get(int key) {
-        if(m.find(key) == m.end())
-            return -1;
-        
-        li.splice(li.begin(), li, m[key]); // 1st par -> iterator position where element/s are pasted, 2nd par -> from where element/s are taken from
-        return m[key]->second;
-    }
-    
-    void put(int key, int value) {
-        if(get(key) != -1){
-            m[key]->second = value;
-            return;
-        }
-        
-        if(m.size() == size){
-            int k = li.back().first;
-            li.pop_back();
-            m.erase(k);
-        }
-        li.push_front({key, value});
-        m[key] = li.begin();
-    }
+    public:
+        LRUCache(int n);
+        void addPage(int x);
 };
 
-/**
- * Your LRUCache object will be instantiated and called as such:
- * LRUCache* obj = new LRUCache(capacity);
- * int param_1 = obj->get(key);
- * obj->put(key,value);
- */
+LRUCache::LRUCache(int n) {
+    size = n;
+}
+
+void LRUCache::addPage(int x) {
+    if(!hash.count(x)) {
+        if(l.size() == size) {
+            int last = l.back(); l.pop_back();
+            hash.erase(last);
+        }
+        l.push_front(x);
+        hash[x] = l.begin();
+        return;
+    }
+
+    l.erase(hash[x]);
+    l.push_front(x);
+    hash[x] = l.begin();
+}
