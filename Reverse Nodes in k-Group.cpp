@@ -8,38 +8,25 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
- 
-// Prerequisite Reverse Linked List II
 class Solution {
 public:
-    ListNode* reverseKGroup(ListNode* head, int k) {
-        if(!head || !head->next || k == 1) return head;
-        
-        ListNode* dummy = new ListNode(-1);
-        dummy->next = head;
-        ListNode* prev = dummy;
-        
-        int i = 0;
-        while(head != NULL){
-            i++;
-            if(i%k == 0){
-                prev = reverse(prev, k);
-                head = prev->next;
-            }
-            else
-                head = head->next;
+    ListNode* reverseKGroup(ListNode* head, int K) {
+        ListNode* node = head;
+        int count = 0;
+        while(count < K) {
+            if(!node) return head;
+            node = node->next;
+            count++;
         }
-        return dummy->next;
-    }
-    
-    ListNode* reverse(ListNode* prev, int k){
-        ListNode *curr = prev->next, *then = curr->next;
-        for(int i = 1; i < k; i++){
-            curr->next = then->next;
-            then->next = prev->next;
-            prev->next = then;
-            then = curr->next;
+        
+        ListNode* prev = reverseKGroup(node, K);
+        while(count > 0) {
+            ListNode* next = head->next;
+            head->next = prev;
+            prev = head;
+            head = next;
+            count--;
         }
-        return curr;
+        return prev;
     }
 };
