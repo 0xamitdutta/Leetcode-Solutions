@@ -23,9 +23,9 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-        if(n == 0) return 0;
+        if(n <= 2) return 0;
         vector<int> left(n), right(n); 
-        // Left stores the maximum height of buiding to the left of i, including i. Right stores the maximum height of building to the right of i, including i
+        // Left stores the maximum height of buiding to the left of i, not including i. Right stores the maximum height of building to the right of i, not including i
         
         left[0] = 0;
         int left_max = height[0];
