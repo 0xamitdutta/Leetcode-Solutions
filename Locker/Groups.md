@@ -27,9 +27,10 @@
 | https://leetcode.com/problems/minimum-path-sum/ | |
 | https://leetcode.com/problems/minimum-falling-path-sum/ | |
 
-### Prefix Sum
-* https://leetcode.com/problems/continuous-subarray-sum/
-* https://leetcode.com/problems/subarray-sums-divisible-by-k/
+| **Prefix Sum** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/continuous-subarray-sum/ | |
+| https://leetcode.com/problems/subarray-sums-divisible-by-k/ | |
 
 | **Sliding Window** | **Solutions** |
 | --- | --- |
@@ -44,12 +45,14 @@
 | https://leetcode.com/problems/sliding-window-maximum/ | |
 | https://leetcode.com/problems/minimum-window-substring/ | |
 
-### Intervals
-* https://leetcode.com/problems/merge-intervals/
-* https://www.lintcode.com/problem/meeting-rooms/description
-* https://www.lintcode.com/problem/meeting-rooms-ii/description
-* https://leetcode.com/problems/non-overlapping-intervals/
-* https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+
+| **Intervals** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/merge-intervals/ | |
+| https://www.lintcode.com/problem/meeting-rooms/description | |
+| https://www.lintcode.com/problem/meeting-rooms-ii/description | |
+| https://leetcode.com/problems/non-overlapping-intervals/ | |
+| https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/ | |
 
 | **Binary Search** | **Solutions** |
 | --- | --- |
@@ -98,38 +101,39 @@
 * https://leetcode.com/problems/word-search/
 * https://leetcode.com/problems/word-break/
 
-## Trees
-* https://leetcode.com/problems/path-sum
-* https://leetcode.com/problems/path-sum-ii
-* https://leetcode.com/problems/path-sum-iii
-* https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree
-* https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
-* https://leetcode.com/problems/maximum-depth-of-n-ary-tree/
-* https://leetcode.com/problems/diameter-of-binary-tree
-* https://leetcode.com/problems/diameter-of-n-ary-tree/
-* https://leetcode.com/problems/same-tree/
-* https://leetcode.com/problems/subtree-of-another-tree/
-* https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
-* https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-* https://leetcode.com/problems/validate-binary-search-tree/
-* https://www.geeksforgeeks.org/print-nodes-in-the-top-view-of-binary-tree-set-3/
-* https://www.geeksforgeeks.org/bottom-view-binary-tree/
-* https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
-* https://www.lintcode.com/problem/binary-tree-vertical-order-traversal/description
-* https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/
-* https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
-* https://www.lintcode.com/en/old/problem/closest-leaf-in-a-binary-tree/
+| **Trees** | **Solutions** |
+| --- | --- |
+| https://leetcode.com/problems/path-sum | |
+| https://leetcode.com/problems/path-sum-ii | |
+| https://leetcode.com/problems/path-sum-iii | |
+| https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree | |
+| https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/ | |
+| https://leetcode.com/problems/maximum-depth-of-n-ary-tree/ | |
+| https://leetcode.com/problems/diameter-of-binary-tree | |
+| https://leetcode.com/problems/diameter-of-n-ary-tree/ | |
+| https://leetcode.com/problems/same-tree/ | |
+| https://leetcode.com/problems/subtree-of-another-tree/ | |
+| https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/ | |
+| https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/ | |
+| https://leetcode.com/problems/validate-binary-search-tree/ | |
+| https://www.geeksforgeeks.org/print-nodes-in-the-top-view-of-binary-tree-set-3/ | |
+| https://www.geeksforgeeks.org/bottom-view-binary-tree/ | |
+| https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/ | |
+| https://www.lintcode.com/problem/binary-tree-vertical-order-traversal/description | |
+| https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/ | |
+| https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/ | |
+| https://www.lintcode.com/en/old/problem/closest-leaf-in-a-binary-tree/ | |
 
 
-## Graphs
-### DFS
+| **Graphs** | **Solutions** |
+| --- | --- |
 * https://leetcode.com/problems/island-perimeter/
 * https://leetcode.com/problems/max-area-of-island/
 * https://leetcode.com/problems/number-of-closed-islands/
 * https://leetcode.com/problems/pacific-atlantic-water-flow/
 * https://leetcode.com/problems/all-paths-from-source-to-target/
 * https://leetcode.com/problems/reconstruct-itinerary/
-* lintcode.com/en/old/problem/graph-valid-tree/
+* https://lintcode.com/en/old/problem/graph-valid-tree/
 
 **Union Find**
 * https://leetcode.com/problems/couples-holding-hands/
