@@ -7,13 +7,11 @@ public:
         unordered_map<char, int> hash;
         int len = 0, distinct = 0;
         for(int i = 0, j = 0; i < s.size(); i++){
-            if(!hash[s[i]])
-                distinct++;
             hash[s[i]]++;
-            while(distinct > k){
+            while(hash.size() > k){
                 hash[s[j]]--;
                 if(hash[s[j]] == 0)
-                    distinct--;
+                    hash.erase(s[j]);
                 j++;
             }
             len = max(len, i-j+1);
