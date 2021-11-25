@@ -1,32 +1,32 @@
 /*  
     Use 2 heaps.
-    One max heap for storing smaller half elements.
-    Another min heap for storing larger half elements.
+    One max heap for storing smaller/lower half elements.
+    One min heap for storing larger/upper half elements.
+    First element goes to upper half, i.e, min_heap
+    At every instance, sizeof(upper) == sizeof(lower) OR sizeof(upper) + 1 == sizeof(lower) 
 */
 class MedianFinder {
-private:
-    priority_queue<int> small; // smaleer half which is a max_heap
-    priority_queue<int, vector<int>, greater<int>> large; // larger half which is a min_heap
-    bool even = true;
 public:
-    void addNum(int num) { // O(logn)
-        if(even) {
-            large.push(num);
-            small.push(large.top());
-            large.pop();
+    priority_queue<int> lower;
+    priority_queue<int, vector<int>, greater<int>> upper;
+    bool isSizeEqual = true;
+    
+    void addNum(int num) {
+        if(isSizeEqual) {
+            lower.push(num);
+            upper.push(lower.top());
+            lower.pop();
+        } else {
+            upper.push(num);
+            lower.push(upper.top());
+            upper.pop();
         }
-        else {
-            small.push(num);
-            large.push(small.top());
-            small.pop();
-        }
-        even = !even;
+        isSizeEqual = !isSizeEqual;
     }
     
-    double findMedian() { // O(1)
-        if(even) 
-            return (small.top() + large.top()) / 2.0;
-        return small.top();
+    double findMedian() {
+        if(lower.size() == upper.size()) return (lower.top() + upper.top())/2.0;
+        return upper.top();
     }
 };
 
