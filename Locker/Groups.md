@@ -12,6 +12,7 @@
 | https://leetcode.com/problems/ugly-number/ | 
 | https://leetcode.com/problems/ugly-number-ii/ | 
 | https://leetcode.com/problems/trapping-rain-water/ | 
+| https://leetcode.com/problems/largest-rectangle-in-histogram/ |
 | https://leetcode.com/problems/container-with-most-water/ | 
 | https://www.lintcode.com/problem/wiggle-sort/description/ | 
 | **Matrix** | 
@@ -85,6 +86,8 @@
 | https://leetcode.com/problems/letter-combinations-of-a-phone-number |
 | https://leetcode.com/problems/word-search/ |
 | https://leetcode.com/problems/word-break/ |
+| **Stack** |
+| https://leetcode.com/problems/exclusive-time-of-functions/ |
 | **Trees** | 
 | https://leetcode.com/problems/path-sum | 
 | https://leetcode.com/problems/path-sum-ii | 
