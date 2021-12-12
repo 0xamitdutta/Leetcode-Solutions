@@ -9,7 +9,7 @@
  * }
  */
 
-
+// O(N) space
 class Solution {
 public:
     /*
@@ -35,7 +35,7 @@ public:
     }
 };
 
-
+// O(1) Space
 class Solution {
 public:
     /*
@@ -45,6 +45,7 @@ public:
      * @return: The lowest common ancestor of A and B
      */
     ParentTreeNode * lowestCommonAncestorII(ParentTreeNode * A, ParentTreeNode * B) {
+        // Similar to Intersction of 2 Linked Lists. If A reaches NULL move it to B and if B reaches to NULL move it to A
         ParentTreeNode* a = A, *b = B;
         while(a != b) {
             a = a == NULL ? B : a->parent;
