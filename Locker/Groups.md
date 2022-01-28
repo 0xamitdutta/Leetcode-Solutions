@@ -2,8 +2,8 @@
 | --- |
 | https://leetcode.com/problems/find-all-duplicates-in-an-array/  |   
 | https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/  |  
-| https://leetcode.com/problems/maximum-subarray/ | [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Sum%20Subarray.cpp) 
-| https://leetcode.com/problems/maximum-product-subarray/ | [**Solution**](https://github.com/Amitdutta7/Leetcode-Solutions/blob/master/Maximum%20Product%20Subarray.cpp) 
+| https://leetcode.com/problems/maximum-subarray/ |  
+| https://leetcode.com/problems/maximum-product-subarray/ | 
 | https://leetcode.com/problems/subarray-sum-equals-k/ | 
 | https://leetcode.com/problems/contiguous-array/ | 
 | https://www.lintcode.com/problem/maximum-size-subarray-sum-equals-k/description | 
@@ -109,50 +109,40 @@
 | https://www.geeksforgeeks.org/boundary-traversal-of-binary-tree/ | 
 | https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/ | 
 | https://www.lintcode.com/en/old/problem/closest-leaf-in-a-binary-tree/ | 
+| **Graphs** **(DFS)** | 
+| https://leetcode.com/problems/island-perimeter/ |
+| https://leetcode.com/problems/max-area-of-island/ |
+| https://leetcode.com/problems/number-of-closed-islands/ |
+| https://leetcode.com/problems/pacific-atlantic-water-flow/ |
+| https://leetcode.com/problems/all-paths-from-source-to-target/ |
+| https://leetcode.com/problems/reconstruct-itinerary/ |
+| https://lintcode.com/en/old/problem/graph-valid-tree/ |
+| **Graphs** **(BFS)** |
+| https://leetcode.com/problems/shortest-path-in-binary-matrix/ |
+| https://leetcode.com/problems/word-ladder/ |
+| https://leetcode.com/problems/word-ladder-ii/ |
+| https://leetcode.com/problems/minimum-genetic-mutation/ |
+| https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo) |
+| https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/ |
+| **Multi Source BFS** |
+| https://leetcode.com/problems/01-matrix/ |
+| https://leetcode.com/problems/rotting-oranges/ |
+| **Union Find** |
+| https://leetcode.com/problems/couples-holding-hands/ |
+| https://leetcode.com/problems/redundant-connection/ |
+| https://leetcode.com/problems/redundant-connection-ii/ |
+| **Bipartite Graphs** |
+| https://leetcode.com/problems/is-graph-bipartite/ |
+| https://leetcode.com/problems/possible-bipartition/ |
+| **Topological Sorting** |
+| https://leetcode.com/problems/course-schedule/ |
+| https://leetcode.com/problems/course-schedule-ii/ |
+| https://www.lintcode.com/problem/alien-dictionary/description (Not topological sort but question context is same) |
+| https://www.lintcode.com/problem/alien-dictionary/description |
+| **Djikstra** |
+| https://leetcode.com/problems/network-delay-time/ |
+| **Articulation Points** |
+| https://leetcode.com/problems/critical-connections-in-a-network/ |
 
 
-| **Graphs** | **Solutions** |
-| --- | --- |
-* https://leetcode.com/problems/island-perimeter/
-* https://leetcode.com/problems/max-area-of-island/
-* https://leetcode.com/problems/number-of-closed-islands/
-* https://leetcode.com/problems/pacific-atlantic-water-flow/
-* https://leetcode.com/problems/all-paths-from-source-to-target/
-* https://leetcode.com/problems/reconstruct-itinerary/
-* https://lintcode.com/en/old/problem/graph-valid-tree/
-
-**Union Find**
-* https://leetcode.com/problems/couples-holding-hands/
-* https://leetcode.com/problems/redundant-connection/
-* https://leetcode.com/problems/redundant-connection-ii/
-
-**Djikstra**
-* https://leetcode.com/problems/network-delay-time/
-
-**Articulation Points**
-* https://leetcode.com/problems/critical-connections-in-a-network/
-
-**Bipartite Graphs**
-* https://leetcode.com/problems/is-graph-bipartite/
-* https://leetcode.com/problems/possible-bipartition/
-
-**Topological Sorting**
-* https://leetcode.com/problems/course-schedule/
-* https://leetcode.com/problems/course-schedule-ii/
-* https://www.lintcode.com/problem/alien-dictionary/description (Not topological sort but question context is same)
-* https://www.lintcode.com/problem/alien-dictionary/description
-
-### BFS
-* https://leetcode.com/problems/shortest-path-in-binary-matrix/
-* https://leetcode.com/problems/word-ladder/
-* https://leetcode.com/problems/word-ladder-ii/
-* https://leetcode.com/problems/minimum-genetic-mutation/
-
-**Multi Source BFS**
-* https://leetcode.com/problems/01-matrix/
-* https://leetcode.com/problems/rotting-oranges/
-
-**0-1 BFS**
-* https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo)
-* https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/
 
