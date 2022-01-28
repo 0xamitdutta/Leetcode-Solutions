@@ -46,7 +46,6 @@
 | https://leetcode.com/problems/non-overlapping-intervals/ | 
 | https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/ | 
 | **Binary Search** |
-| --- | 
 | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | 
 | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/ | 
 | https://leetcode.com/problems/search-in-rotated-sorted-array/ | 
@@ -112,11 +111,14 @@
 | **Graphs** **(DFS)** | 
 | https://leetcode.com/problems/island-perimeter/ |
 | https://leetcode.com/problems/max-area-of-island/ |
-| https://leetcode.com/problems/number-of-closed-islands/ |
 | https://leetcode.com/problems/pacific-atlantic-water-flow/ |
 | https://leetcode.com/problems/all-paths-from-source-to-target/ |
 | https://leetcode.com/problems/reconstruct-itinerary/ |
 | https://lintcode.com/en/old/problem/graph-valid-tree/ |
+| **Border DFS** |
+| https://leetcode.com/problems/number-of-closed-islands/ |
+| https://leetcode.com/problems/number-of-enclaves/ | 
+| https://leetcode.com/problems/surrounded-regions/ |
 | **Graphs** **(BFS)** |
 | https://leetcode.com/problems/shortest-path-in-binary-matrix/ |
 | https://leetcode.com/problems/word-ladder/ |
