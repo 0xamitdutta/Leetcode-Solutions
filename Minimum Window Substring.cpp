@@ -1,34 +1,32 @@
+// Check NeetCode on YouTube
 class Solution {
 public:
     string minWindow(string s, string t) {
-        if(s.size() == 0 || t.size() == 0) return "";
+        if(s.size() < t.size()) return "";
+        map<char, int> window, countT;
+        for(char c : t) countT[c]++;
         
-        // Map all characters in t with their frequencies
-        unordered_map<char, int> hash;
-        for(char& c : t){
-            hash[c]++;
-        }
-        int counter = t.size(); // When counter becomes 0, we know a substring in s contains t
-        int min_len = INT_MAX, start_ind = 0; // These two var helps to find the minimum among all possible substrings
-        for(int i = 0, j = 0; i < s.size(); i++){
-            if(hash[s[i]] > 0){
-                counter--;
-            }
-            hash[s[i]]--;
-            
-            // Keep shrinking while counter is still 0, i.e a smaller substring is possible
-            while(counter == 0){
-                if(i-j+1 < min_len){
-                    min_len = i-j+1;
-                    start_ind = j;
+        int have = 0, need = countT.size();
+        int left = 0, right = 0, minLen = INT_MAX;
+        int l = 0;
+        for(int r = 0; r < s.size(); r++) {
+            char c = s[r];
+            window[c]++;
+            if(countT.count(c) && window[c] == countT[c]) 
+                have++;
+            while(have == need) {
+                // Update the len if len is smaller than minLen
+                if(r-l+1 < minLen) {
+                    minLen = r-l+1;
+                    left = l, right = r;
                 }
-                hash[s[j]]++;
-                if(hash[s[j]] > 0){
-                    counter++;
-                }
-                j++;
+                // Move the l pointer forward
+                window[s[l]]--;
+                if(countT.count(s[l]) && window[s[l]] < countT[s[l]])
+                    have--;
+                l++;
             }
         }
-        return min_len == INT_MAX ? "" : s.substr(start_ind, min_len);
+        return minLen != INT_MAX ? s.substr(left, minLen) : "";
     }
 };
