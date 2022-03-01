@@ -125,6 +125,7 @@
 | https://leetcode.com/problems/word-ladder/ |
 | https://leetcode.com/problems/word-ladder-ii/ |
 | https://leetcode.com/problems/minimum-genetic-mutation/ |
+| https://leetcode.com/problems/open-the-lock/submissions/ |
 | https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo) |
 | https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/ |
 | **Multi Source BFS** |
