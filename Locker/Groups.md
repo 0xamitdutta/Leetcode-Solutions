@@ -41,6 +41,7 @@
 | https://leetcode.com/problems/minimum-window-substring/ | 
 | **Intervals** | 
 | https://leetcode.com/problems/merge-intervals/ | 
+| https://leetcode.com/problems/remove-covered-intervals/ |
 | https://www.lintcode.com/problem/meeting-rooms/description | 
 | https://www.lintcode.com/problem/meeting-rooms-ii/description | 
 | https://leetcode.com/problems/non-overlapping-intervals/ | 
