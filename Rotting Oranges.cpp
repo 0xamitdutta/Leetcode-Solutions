@@ -1,44 +1,42 @@
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& grid) {
-        int m = grid.size();
-        int n = grid[0].size();
+        int m = grid.size(), n = grid[0].size();
         
-        int fresh = 0;
         queue<pair<int, int>> q;
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-                if(grid[i][j] == 2){
+        int freshOranges = 0;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j] == 2)
                     q.push({i, j});
-                }
-                else if(grid[i][j] == 1)
-                    fresh++;
+                if(grid[i][j] == 1)
+                    freshOranges++;
             }
         }
-        if(fresh == 0) return 0;
-        if(q.empty()) return -1;
+        if(freshOranges == 0) return 0;
+        if(q.size() == 0) return -1;
         
-        int count = 0;
-        // This is how you iterate in 4 direections for BFS.
-        vector<pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
-        while(!q.empty()){
-            count++;
+        vector<pair<int, int>> directions = {
+            {1, 0}, {-1, 0}, {0, 1}, {0, -1}
+        };
+        int time = 0;
+        while(!q.empty()) {
             int size = q.size();
-            for(int i = 0; i < size; i++){
+            for(int i = 0; i < size; i++) {
                 auto p = q.front();
                 q.pop();
-                for(auto dir : dirs){
-                    int x = p.first + dir.first;
-                    int y = p.second + dir.second;
-                    if(x < 0 || x >= m || y < 0 || y >= n || grid[x][y] == 0 || grid[x][y] == 2)
-                        continue;
-                    grid[x][y] = 2;
-                    q.push({x, y});
-                    fresh--;
+                int x = p.first, y = p.second;
+                for(int j = 0; j < 4; j++) {
+                    int nx = x + directions[j].first, ny = y + directions[j].second;
+                    if(nx >= 0 && nx < m && ny >= 0 && ny < n && grid[nx][ny] == 1) {
+                        grid[nx][ny] = 2;
+                        freshOranges--;
+                        q.push({nx, ny});
+                    }
                 }
             }
+            time++;
         }
-        // count-1 is there for the 1st time, when t == 0
-        return fresh == 0 ? count-1 : -1;
+        return freshOranges == 0 ? time-1 : -1;
     }
 };
