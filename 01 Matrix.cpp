@@ -1,35 +1,36 @@
 class Solution {
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& matrix) {
-        int rows = matrix.size();
-        int cols = matrix[0].size();
-        if(rows == 0)
-            return matrix;
+        int m = matrix.size(), n = matrix[0].size();
         
-        vector<vector<int>> dist(rows, vector<int>(cols, INT_MAX));
+        vector<vector<int>> res(m, vector<int>(n, INT_MAX));
         queue<pair<int, int>> q;
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < cols; j++){
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
                 if(matrix[i][j] == 0){
-                    dist[i][j] = 0;
+                    res[i][j] = 0;
                     q.push({i, j});
                 }
             }
         }
-        vector<pair<int, int>> p = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+        
+        vector<vector<int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int dist = 1;
         while(!q.empty()){
-            pair<int, int> curr = q.front();
-            q.pop();
-            for(int i = 0; i < p.size(); i++){
-                int nr = curr.first + p[i].first, nc = curr.second + p[i].second;
-                if(nr >= 0 && nr < rows && nc >= 0 && nc < cols){
-                    if(dist[nr][nc] > dist[curr.first][curr.second] + 1){
-                        dist[nr][nc] = dist[curr.first][curr.second] + 1;
-                        q.push({nr, nc});
-                    }
+            int size = q.size();
+            for(int i = 0; i < size; i++){
+                int x = q.front().first, y = q.front().second;
+                q.pop();
+                for(int i = 0; i < 4; i++){
+                    int nx = x + dirs[i][0], ny = y + dirs[i][1];
+                    if(nx < 0 || nx >= m || ny < 0 || ny >= n || res[nx][ny] != INT_MAX) continue;
+                    res[nx][ny] = dist;
+                    q.push({nx, ny});
                 }
             }
+            dist++;
         }
-        return dist;
+        
+        return res;
     }
 };
