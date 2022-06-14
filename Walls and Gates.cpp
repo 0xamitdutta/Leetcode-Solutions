@@ -33,37 +33,34 @@ public:
 // Multi-Source BFS O(m*n)
 class Solution {
 public:
+    /**
+     * @param rooms: m x n 2D grid
+     * @return: nothing
+     */
     void wallsAndGates(vector<vector<int>> &rooms) {
         int m = rooms.size(), n = rooms[0].size();
-        
-        queue<vector<int>> q;
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
+        queue<pair<int, int>> q;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
                 if(rooms[i][j] == 0)
-                    q.push({i, j, 0});
+                    q.push({i, j});
             }
         }
-
-        vector<int> x_dir = {0, 0, 1, -1};
-        vector<int> y_dir = {1, -1, 0, 0};
+        vector<vector<int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+        int dist = 1;
         while(!q.empty()) {
             int size = q.size();
             for(int i = 0; i < size; i++) {
-                int x = q.front()[0];
-                int y = q.front()[1];
-                int d = q.front()[2];
+                int x = q.front().first, y = q.front().second;
                 q.pop();
-
-                for(int i = 0; i < 4; i++) {
-                    int new_x = x + x_dir[i];
-                    int new_y = y + y_dir[i];
-                    if(new_x < 0 || new_x >= rooms.size() || new_y < 0 || new_y >= rooms[0].size() || rooms[new_x][new_y] != 2147483647)
-                        continue;
-                    rooms[new_x][new_y] = d+1;
-                    q.push({new_x, new_y, d+1});
+                for(auto dir : dirs) {
+                    int nx = x + dir[0], ny = y + dir[1];
+                    if(nx < 0 || nx >= m || ny < 0 || ny >= n || rooms[nx][ny] != INT_MAX) continue;
+                    rooms[nx][ny] = dist;
+                    q.push({nx, ny});
                 }
             }
+            dist++;
         }
     }
-    
 };
