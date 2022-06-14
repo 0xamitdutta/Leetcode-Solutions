@@ -140,8 +140,9 @@
 | https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo) |
 | https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/ |
 | **Multi Source BFS** |
-| https://leetcode.com/problems/01-matrix/ |
 | https://leetcode.com/problems/rotting-oranges/ |
+| https://www.lintcode.com/problem/663/ |
+| https://leetcode.com/problems/01-matrix/ |
 | **Union Find** |
 | https://leetcode.com/problems/couples-holding-hands/ |
 | https://leetcode.com/problems/redundant-connection/ |
