@@ -4,9 +4,7 @@
 class Solution {
 public:
     void wallsAndGates(vector<vector<int>> &rooms) {
-        int m = rooms.size();
-        if(m == 0) return;
-        int n = rooms[0].size();
+        int m = rooms.size(), n = rooms[0].size();
         
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
