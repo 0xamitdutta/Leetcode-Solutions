@@ -9,55 +9,53 @@
  */
 class Solution {
 public:
+    unordered_map<TreeNode*, TreeNode*> parents;
+    unordered_set<TreeNode*> vis;
     vector<int> distanceK(TreeNode* root, TreeNode* start, int K) {
-        unordered_map<TreeNode*, TreeNode*> m;
-        unordered_set<TreeNode*> s;
-        initialise(m, root, NULL);
+        initialiseParent(root, NULL);
         
-        int layer = 0;
         queue<TreeNode*> q;
-        vector<int> res;
         q.push(start);
-        s.insert(start);
+        vis.insert(start);
         while(!q.empty()){
-            if(layer == K)
-                return printlayer(res, q);
+            if(K == 0)
+                return printlayer(q);
             int size = q.size();
             for(int i = 0; i < size; i++){
                 TreeNode* curr = q.front();
                 q.pop();
-                if(curr->left && s.find(curr->left) == s.end()){
+                if(curr->left && !vis.count(curr->left)){
                     q.push(curr->left);
-                    s.insert(curr->left);
+                    vis.insert(curr->left);
                 }
-                if(curr->right && s.find(curr->right) == s.end()){
+                if(curr->right && !vis.count(curr->right)){
                     q.push(curr->right);
-                    s.insert(curr->right);
+                    vis.insert(curr->right);
                 }
-                if(m[curr] && s.find(m[curr]) == s.end()){
-                    q.push(m[curr]);
-                    s.insert(m[curr]);
+                if(parents[curr] && !vis.count(parents[curr])){
+                    q.push(parents[curr]);
+                    vis.insert(parents[curr]);
                 }
             }
-            layer++;
+            K--;
         }
-        return res;
+        return vector<int>();
     }
         
-    void initialise(unordered_map<TreeNode*, TreeNode*>& m, TreeNode* child, TreeNode* parent){
-        if(child == NULL)
-            return;
+    void initialiseParent(TreeNode* child, TreeNode* parent){
+        if(!child) return;
 
-        m[child] = parent;
-        initialise(m, child->left, child);
-        initialise(m, child->right, child);
+        parents[child] = parent;
+        initialiseParent(child->left, child);
+        initialiseParent(child->right, child);
     }
         
-    vector<int> printlayer(vector<int>& res, queue<TreeNode*>& q){
+    vector<int> printlayer(queue<TreeNode*>& q){
+        vector<int> res;
         while(!q.empty()){
             TreeNode* node = q.front();
-            res.push_back(node->val);
             q.pop();
+            res.push_back(node->val);
         }
         return res;
     }
