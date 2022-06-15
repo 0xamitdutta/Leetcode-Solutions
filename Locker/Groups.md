@@ -46,6 +46,8 @@
 | https://www.lintcode.com/problem/meeting-rooms-ii/description | 
 | https://leetcode.com/problems/non-overlapping-intervals/ | 
 | https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/ | 
+| **Priority Queue** |
+| https://leetcode.com/problems/top-k-frequent-words/submissions/ |
 | **Linked List** |
 | https://leetcode.com/problems/linked-list-cycle/ |
 | https://leetcode.com/problems/linked-list-cycle-ii/|
