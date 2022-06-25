@@ -1,27 +1,27 @@
 // Dfs O(n*n)
 class Solution {
 public:
-    vector<int> adj[1005];
+    map<int, vector<int>> G;
+    set<int> vis;
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
-        for(auto edge : edges){
-            int a = edge[0], b = edge[1];
-            adj[a].push_back(b);
-            adj[b].push_back(a);
-            vector<int> vis(1005);
-            if(isCycle(a, 0, vis))
-                return {a, b};
+        for(auto e : edges) {
+            G[e[0]].push_back(e[1]);
+            G[e[1]].push_back(e[0]);
+            vis.clear();
+            if(isCycle(e[0], 0))
+                return e;
         }
         return {};
     }
     
-    bool isCycle(int src, int par, vector<int>& vis){
-        vis[src] = 1;
-        for(int u : adj[src]){
-            if(!vis[u]){
-                if(isCycle(u, src, vis))
+    bool isCycle(int u, int par) {
+        vis.insert(u);
+        for(int v : G[u]){
+            if(!vis.count(v)){
+                if(isCycle(v, u))
                     return true;
             }
-            else if(u != par)
+            else if(v != par)
                 return true;
         }
         return false;
@@ -38,7 +38,7 @@ public:
             int a = find(edge[0]);
             int b = find(edge[1]);
             if(a == b)
-                return {edge[0], edge[1]};
+                return edge;
             Union(a, b);
         }
         return {};
