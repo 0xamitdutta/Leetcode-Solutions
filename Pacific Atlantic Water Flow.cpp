@@ -1,3 +1,7 @@
+/*
+Naive Approach : Run a DFS call from each cell and check if we are able to reach both oceans or not. TC: O(m*n)^2
+Optimal Approach: Run a DFS from the border of the grid (Basically it means run a DFS from both oceans). TC: O(m*n)
+*/
 class Solution {
 public:
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& matrix) {
