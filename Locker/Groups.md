@@ -60,6 +60,7 @@
 | https://leetcode.com/problems/remove-duplicates-from-sorted-list/ |
 | https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/ |
 | **Binary Search** |
+| Template: shorturl.at/jzAIM |
 | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ | 
 | https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/ | 
 | https://leetcode.com/problems/search-in-rotated-sorted-array/ | 
