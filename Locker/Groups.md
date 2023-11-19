@@ -2,6 +2,8 @@
 | --- |
 | https://leetcode.com/problems/find-all-duplicates-in-an-array/  |   
 | https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/  |  
+| https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/ |
+| https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/ |
 | https://leetcode.com/problems/maximum-subarray/ |  
 | https://leetcode.com/problems/maximum-product-subarray/ | 
 | https://leetcode.com/problems/subarray-sum-equals-k/ | 
