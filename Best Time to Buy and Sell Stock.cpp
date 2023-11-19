@@ -1,13 +1,11 @@
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        // Just keep track of min_price and check whether prices[i] - min_price > profit
-        int min_price = INT_MAX, profit = 0;
-        for(int i = 0; i < prices.size(); i++){
-            if(prices[i] < min_price)
-                min_price = prices[i];
-            else if(prices[i] - min_price > profit)
-                profit = prices[i] - min_price;
+        // Keep track of the minPrice and profit at each index of the array
+        int minP = prices[0], profit = 0;
+        for(int i = 1; i < prices.size(); i++) {
+            minP = min(minP, prices[i]);
+            profit = max(profit, prices[i] - minP);
         }
         return profit;
     }
