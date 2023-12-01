@@ -2,7 +2,7 @@ class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
         unordered_set<string> hash(wordDict.begin(), wordDict.end());
-        // dp[i] represents whether string ending with char i can be segmented
+        // dp[i] represents whether string ending with ith character can be segmented
         vector<bool> dp(s.size() + 1);
         
         dp[0] = true;
