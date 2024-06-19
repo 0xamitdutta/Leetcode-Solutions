@@ -7,18 +7,19 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- 
-// Search for p and q. If p exist in root->left and q exist in root->right or vice-versa return root.
-// Use bottomu-up dfs for this and top-down dfs for bst
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(!root) return NULL;
         if(root == p || root == q) return root;
-        
-        TreeNode* left = lowestCommonAncestor(root->left, p, q);
-        TreeNode* right = lowestCommonAncestor(root->right, p, q);
-        if(left && right) return root;
-        return left ? left : right;
+
+        TreeNode* leftNode = lowestCommonAncestor(root->left, p, q);
+        TreeNode* rightNode = lowestCommonAncestor(root->right, p, q);
+        if(leftNode && rightNode) 
+            return root;
+        // If leftNode is not NULL return leftNode. If rightNode is not NULL return rightNode. Else return NULL in general
+        if(leftNode != NULL) return leftNode;
+        if(rightNode != NULL) return rightNode;
+        return NULL;
     }
 };
