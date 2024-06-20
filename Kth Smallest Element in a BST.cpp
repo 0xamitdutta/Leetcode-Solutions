@@ -4,48 +4,45 @@
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
- 
-// Recursive
 class Solution {
 public:
-    int kthSmallest(TreeNode* root, int k) {
-        return helper(root, k);
+    int ans = 0;
+    int kthSmallest(TreeNode* root, int K) {
+        inorder(root, K);
+        return ans;
     }
     
-    int helper(TreeNode* root, int &k){
-        // k == 0 is for if we found the ans on left we do not want to waste our time on right.
-        if(root == NULL || k == 0) return -1;
-        
-        int left = helper(root->left, k);
-        if(--k == 0) return root->val;
-        int right = helper(root->right, k);
-        return left != -1 ? left : right;
+    void inorder(TreeNode* root, int& K) {
+        if(!root || !K) return;
+        inorder(root->left, K);
+        if(--K == 0) {
+            ans = root->val;
+            return;
+        }   
+        inorder(root->right, K);
     }
 };
 
 // Iterative
+// We can use inorder traversal also to create a sorted array. But doing iteratively with stack will only process k elements.
 class Solution {
 public:
-    int kthSmallest(TreeNode* root, int k) {
-        // We can use inorder traversal also to create a sorted array. But doing iteratively with stack will only process k elements.
-        stack<TreeNode*> s;
-        TreeNode* curr = root;
-        while(curr != NULL || !s.empty()){
-            if(curr != NULL){
-                s.push(curr);
-                curr = curr->left;
-            }
-            else{
-                curr = s.top();
-                s.pop();
-                if(--k == 0)
-                    return curr->val;
-                curr = curr->right;
-            }
-        }
-        return -1;
+    vector<int> res;
+    vector<int> inorderTraversal(TreeNode* root) {
+        inorder(root);
+        return res;
+    }
+    
+    void inorder(TreeNode* root){
+        if(!root) return;
+        
+        inorder(root->left);
+        res.push_back(root->val);
+        inorder(root->right);
     }
 };
