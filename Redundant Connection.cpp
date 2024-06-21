@@ -4,24 +4,26 @@ public:
     map<int, vector<int>> G;
     set<int> vis;
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
-        for(auto e : edges) {
-            G[e[0]].push_back(e[1]);
-            G[e[1]].push_back(e[0]);
+        for(auto edge : edges){
+            int u = edge[0], v = edge[1];
+            G[u].push_back(v);
+            G[v].push_back(u);
             vis.clear();
-            if(isCycle(e[0], 0))
-                return e;
+            // Try to check if we can reach node v from node u
+            if(isCycle(u, -1)) // Passing parent along with node u
+                return edge;
         }
         return {};
     }
     
-    bool isCycle(int u, int par) {
-        vis.insert(u);
-        for(int v : G[u]){
-            if(!vis.count(v)){
-                if(isCycle(v, u))
+    bool isCycle(int src, int par){
+        vis.insert(src);
+        for(int adjNode : G[src]){
+            if(!vis.count(adjNode)){
+                if(isCycle(adjNode, src))
                     return true;
             }
-            else if(v != par)
+            else if(adjNode != par)
                 return true;
         }
         return false;
