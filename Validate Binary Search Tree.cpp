@@ -34,24 +34,25 @@ class Solution {
         int maxm;
         isBSTpair() : isBST(true), minm(INT_MAX), maxm(INT_MIN) {}
     };
-public:
-    bool isValidBST(TreeNode* root) {
-        BSTpair bp = isBST(root);
-        return bp.isBST;
-    }
-    
-    BSTpair isBST(root){
-        if(!root){
-            BSTpair bp;
-            return bp;
+
+    public:
+        bool isValidBST(TreeNode* root) {
+            BSTpair bp = isBST(root);
+            return bp.isBST;
         }
         
-        BSTpair lp = isBST(root->left);
-        BSTpair rp = isBST(root->right);
-        BSTpair cp;
-        cp.isBST = lp.isBST && rp.isBST && (root->val > lp.maxm && root->val < rp.minm);
-        cp.minm = min(root->val, min(lp.minm, rp.minm));
-        cp.maxm = max(root->val, max(lp.maxm, rp.maxm));
-        return cp;
-    }
+        BSTpair isBST(root){
+            if(!root){
+                BSTpair bp;
+                return bp;
+            }
+            
+            BSTpair lp = isBST(root->left);
+            BSTpair rp = isBST(root->right);
+            BSTpair cp;
+            cp.isBST = lp.isBST && rp.isBST && (root->val > lp.maxm && root->val < rp.minm);
+            cp.minm = min(root->val, min(lp.minm, rp.minm));
+            cp.maxm = max(root->val, max(lp.maxm, rp.maxm));
+            return cp;
+        }
 };
