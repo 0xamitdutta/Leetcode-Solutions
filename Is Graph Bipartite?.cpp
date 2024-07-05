@@ -2,23 +2,29 @@ class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {
         int n = graph.size();
-        vector<int> color(n);
-        for(int i = 0; i < n; i++){
-            // If the node is not colored and running dfs from that node returns false, then the Graph isn't bipartite
-            if(!color[i] && !dfs(graph, color, i, 1)){
+        vector<int> vis(n); 
+        // Doing this if the graph is not connected
+        for(int i = 0; i < n; i++) {
+            if(!vis[i] && !bfs(i, graph, vis))
                 return false;
-            }
         }
         return true;
     }
-    
-    bool dfs(vector<vector<int>>& graph, vector<int>& color, int u, int c){
-        if(color[u]) return color[u] == c;
-        
-        color[u] = c;
-        for(int v : graph[u]){
-            if(!dfs(graph, color, v, -c)){
-                return false;
+
+    bool bfs(int u, vector<vector<int>>& graph, vector<int>& vis) {
+        queue<int> q;
+        q.push(u);
+        vis[u] = 1;
+        while(!q.empty()) {
+            u = q.front();
+            q.pop();
+            for(int v : graph[u]) {
+                if(vis[v] && vis[v] == vis[u])
+                    return false;
+                if(!vis[v]) {
+                    q.push(v);
+                    vis[v] = -1 * vis[u];
+                }
             }
         }
         return true;
