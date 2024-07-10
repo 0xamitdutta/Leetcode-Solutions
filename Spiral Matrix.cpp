@@ -9,20 +9,24 @@ public:
         int c1 = 0;
         int c2 = matrix[0].size() - 1;
         while(r1 <= r2 && c1 <= c2){
+            // Right
             for(int j = c1; j <= c2; j++)
                 res.push_back(matrix[r1][j]);
             r1++;
-            
+
+            // Down
             for(int i = r1; i <= r2; i++)
                 res.push_back(matrix[i][c2]);
             c2--;
             
             if(r1 > r2 || c1 > c2) break;
-            
+
+            // Left
             for(int j = c2; j >= c1; j--)
                 res.push_back(matrix[r2][j]);
             r2--;
-            
+
+            // Top
             for(int i = r2; i >= r1; i--)
                 res.push_back(matrix[i][c1]);
             c1++;
