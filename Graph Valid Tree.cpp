@@ -32,3 +32,36 @@ public:
         return false;
     }
 };
+
+// Union Find
+// Decrement n after each Union operation. At the end only 1 coonected component should be remaining
+class Solution {
+public:
+    /**
+     * @param n: An integer
+     * @param edges: a list of undirected edges
+     * @return: true if it's a valid tree, or false
+     */
+    bool validTree(int n, vector<vector<int>> &edges) {
+        vector<int> par(n, -1);
+        for(auto& edge : edges) {
+            int u = edge[0], v = edge[1];
+            int parU = find(u), int parV = find(v);
+            if(parU == parV) 
+                return false;
+            doUnion(parU, parV);
+            n--;
+        }
+        return n == 1;
+    }
+
+    int find(int node) {
+        if(par[node] == -1)
+            return node;
+        return par[node] = find(par[node]);
+    }
+
+    void doUnion(int parU, int parV) {
+        par[parV] = parU;
+    }
+};
