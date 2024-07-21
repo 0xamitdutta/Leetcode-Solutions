@@ -37,11 +37,6 @@ public:
 // Decrement n after each Union operation. At the end only 1 coonected component should be remaining
 class Solution {
 public:
-    /**
-     * @param n: An integer
-     * @param edges: a list of undirected edges
-     * @return: true if it's a valid tree, or false
-     */
     bool validTree(int n, vector<vector<int>> &edges) {
         vector<int> par(n, -1);
         for(auto& edge : edges) {
