@@ -2,35 +2,39 @@
 
 class Solution {
 public:
-    unordered_map<int, vector<pair<int, int>>> G;
     int networkDelayTime(vector<vector<int>>& times, int n, int k) {
-        vector<int> distance(n+1, INT_MAX);
-        for(auto time : times) {
-            int a = time[0], b = time[1], t = time[2];
-            G[a].push_back({b, t});
+        unordered_map<int, vector<pair<int, int>>> G;
+        for(auto& time : times) {
+            int u = time[0], v = time[1], d = time[2];
+            G[u].push_back({v, d});
         }
-        distance[k] = 0;
-        dijkstra(distance, k);
-        int ans = 0;
+
+        vector<int> distances(n+1, INT_MAX);
+        distances[k] = 0;
+        dijkstra(G, distances, k);
+        
+        int res = 0;
         for(int i = 1; i <= n; i++) {
-            if(distance[i] == INT_MAX) return -1;
-            ans = max(ans, distance[i]);
+            if(distances[i] == INT_MAX)
+                return -1;
+            res = max(res, distances[i]);
         }
-        return ans;
+        return res;
     }
-    
-    void dijkstra(vector<int>& distance, int src) {
+
+    void dijkstra(unordered_map<int, vector<pair<int, int>>> G, vector<int>& distances, int& k) {
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-        pq.push({0, src});
+        pq.push({0, k});
+
         while(!pq.empty()) {
-            auto node = pq.top();
+            int d = pq.top().first;
+            int u = pq.top().second;
             pq.pop();
-            int u = node.second;
-            for(auto nbr : G[u]) {
+            for(auto& nbr : G[u]) {
                 int v = nbr.first, w = nbr.second;
-                if(distance[u] + w < distance[v]) {
-                    distance[v] = distance[u] + w;
-                    pq.push({distance[v], v});
+                if(d + w < distances[v]) {
+                    distances[v] = d + w;
+                    pq.push({distances[v], v});
                 }
             }
         }
