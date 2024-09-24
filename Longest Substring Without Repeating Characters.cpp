@@ -1,3 +1,21 @@
+// Easier version but not optimal to use .erase() method. It has O(1) as best and average case but it is O(N) in worst case
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int i, j = 0, res = 0;
+        unordered_set<char> hash_set;
+        for(i = 0; i < s.size(); i++) {
+            while(hash_set.count(s[i])) {
+                hash_set.erase(s[j]);
+                j++;
+            }
+            hash_set.insert(s[i]);
+            res = max(res, i-j+1);
+        }
+        return res;
+    }
+};
+
 class Solution {
 public:
     int lengthOfLongestSubstring(string str) {
