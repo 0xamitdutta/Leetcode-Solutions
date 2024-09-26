@@ -4,7 +4,7 @@ class Solution {
 public:
     string alienOrder(vector<string> &words) {
         map<char, int> indegree;
-        map<char, set<int>> m;
+        map<char, set<int>> prerequisites;
         for(string word : words){
             for(char c : word)
                 indegree[c] = 0;
@@ -16,7 +16,7 @@ public:
             for(int j = 0; j < len; j++){
                 if(word1[j] != word2[j]){
                     indegree[word2[j]]++;
-                    m[word1[j]].insert(word2[j]);
+                    prerequisites[word1[j]].insert(word2[j]);
                     break;
                 }
             }
@@ -24,16 +24,15 @@ public:
         
         string res = "";
         queue<char> q;
-        for(auto p : indegree){
-            if(p.second == 0)
-                q.push(p.first);
+        for(auto& [key, val] : indegree){
+            if(val == 0)
+                q.push(key);
         }
-        if(q.empty()) return res;
         while(!q.empty()){
-            char temp = q.front();
+            char letter = q.front();
             q.pop();
-            res += temp;
-            for(char c : m[temp]){
+            res += letter;
+            for(char c : prerequisites[letter]){
                 indegree[c]--;
                 if(indegree[c] == 0)
                     q.push(c);
