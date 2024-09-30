@@ -1,9 +1,12 @@
 class Trie {
 private:
     map<char, Trie*> children;
-    bool isEnd = false;
+    bool isEnd;
 public:
-    Trie() {}
+    Trie() {
+        children = {};
+        isEnd = false;
+    }
     
     void insert(string word) {
         Trie* node = this;
