@@ -9,7 +9,7 @@ public:
     }
     
     void insert(string word) {
-        Trie* node = this;
+        Trie* node = this; // This is used to reference the object which is calling this function
         for(char c : word) {
             if(!node->children.count(c))
                 node->children[c] = new Trie();
