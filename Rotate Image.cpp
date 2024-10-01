@@ -2,18 +2,18 @@ class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
         int n = matrix.size();
-        if(n == 0) return;
-        
-        // Transpose
-        for(int i = 0; i < n; i++){
-            for(int j = i+1; j < n; j++)
+        // Transpose : Mirror around the diagonal axis
+        for(int i = 0; i < n; i++) {
+            for(int j = i; j < n; j++) 
                 swap(matrix[i][j], matrix[j][i]);
         }
-        
-        // Swapping n/2 columns
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < n/2; j++)
-                swap(matrix[i][j], matrix[i][n-j-1]);
+        // Swap Columns : Mirror around the vertical axis
+        int i = 0, j = n-1;
+        while(i < j) {
+            for(int row = 0; row < n; row++)
+                swap(matrix[row][i], matrix[row][j]);
+            i++;
+            j--;
         }
     }
 };
