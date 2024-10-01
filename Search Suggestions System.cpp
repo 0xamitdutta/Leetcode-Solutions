@@ -9,9 +9,9 @@ public:
         int l = 0, r = products.size()-1;
         for(int i = 0; i < searchWord.size(); i++) {
             char c = searchWord[i];
-            while(l <= r && (products[l].size() <= i || products[l][i] != c))
+            while(l <= r && products[l][i] != c)
                 l++;
-            while(l <= r && (products[r].size() <= i || products[r][i] != c))
+            while(l <= r && products[r][i] != c)
                 r--;
             int words = r-l+1;
             vector<string> searches;
