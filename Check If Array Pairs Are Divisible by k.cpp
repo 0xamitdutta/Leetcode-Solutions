@@ -3,7 +3,7 @@ public:
     bool canArrange(vector<int>& arr, int k) {
         unordered_map<int, int> hash_map;
         for(int i = 0; i < arr.size(); i++) {
-            hash_map[((arr[i] % k) + k) % k]++;
+            hash_map[((arr[i] % k) + k) % k]++;  // This is done to handle negative integers
         }
         for(int i = 0; i < arr.size(); i++) {
             int rem = ((arr[i] % k) + k) % k;
