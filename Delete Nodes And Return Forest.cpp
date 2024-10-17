@@ -12,7 +12,7 @@
 class Solution {
 public:
     vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
-        // We use unordered set to do a quick search whether a node value is present or not in the list. It will be O(1) time to do a scan.
+        // We use unordered set because we can dfs only once and to do a quick search whether a node value is present or not in the list. It will be O(1) time to do a scan.
         unordered_set<int> toDeleteSet(to_delete.begin(), to_delete.end());
         vector<TreeNode*> forest;
 
