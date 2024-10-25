@@ -1,9 +1,6 @@
+// O(n * n * n) solution
 class Solution {
 public:
-    /**
-     * @param costs: n x 3 cost matrix
-     * @return: An integer, the minimum cost to paint all houses
-     */
     int minCost(vector<vector<int>> &costs, int n, int colors) {
         if(n == 0) return 0;
         
@@ -16,6 +13,35 @@ public:
                     minCost = min(minCost, costs[i-1][k];
                 }
                 costs[i-1][j] += minCost;
+            }
+        }
+        int res = costs[n-1][0];
+        for(int j = 1; j < colors; j++) {
+            res = min(res, costs[n-1][j]);
+        }
+        return res;
+    }
+};
+
+// O(n * n) solution
+class Solution {
+public:
+    int minCost(vector<vector<int>> &costs, int n, int colors) {
+        if(n == 0) return 0;
+        
+        // For every house, choose a color and the minimum cost of coloring previous houses 
+        for(int i = 1; i < costs.size(); i++){
+            int least = INT_MAX, secondLeast = INT_MAX
+            for(int j = 0; j < colors; j++) {
+                if(costs[i-1][j] < least) {
+                    secondLeast = least;
+                    least = costs[i-1][j];
+                } else if(costs[i-1][j] < secondLeast) {
+                    secondLeast = costs[i-1][j];
+                }
+            }
+            for(int j = 0; j < colors; j++) {
+                costs[i][j] += (least != costs[i-1][j] ? least : secondLeast);
             }
         }
         int res = costs[n-1][0];
