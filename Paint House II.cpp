@@ -1,4 +1,4 @@
-// O(n * n * n) solution
+// O(n * colors * colors) solution
 class Solution {
 public:
     int minCost(vector<vector<int>> &costs, int n, int colors) {
@@ -23,7 +23,7 @@ public:
     }
 };
 
-// O(n * n) solution
+// O(n * colors) solution
 class Solution {
 public:
     int minCost(vector<vector<int>> &costs, int n, int colors) {
