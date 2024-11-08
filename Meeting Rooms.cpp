@@ -17,9 +17,11 @@ public:
         if(intervals.size() == 0 || intervals.size() == 1) return true;
         
         sort(intervals.begin(), intervals.end(), [](Interval& a, Interval& b){return a.start < b.start;});
-        for(int i = 1; i < intervals.size(); i++){
-            if(intervals[i].start < intervals[i-1].end)
+        int endTime = intervals[0].second;
+        for(int i = 0; i < intervals.size(); i++) {
+            if(intervals[i].first < endTime) 
                 return false;
+            endTime = intervals[i].second;
         }
         return true;
     }
