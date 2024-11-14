@@ -1,7 +1,7 @@
 class LRUCache {
 private:
-    list<pair<int, int>> l;
-    unordered_map<int, list<pair<int, int>>::iterator> m;
+    list<pair<int, int>> keyValueList;
+    unordered_map<int, list<pair<int, int>>::iterator> pos;
     int capacity;
 public:
     LRUCache(int _capacity) {
@@ -9,31 +9,31 @@ public:
     }
     
     int get(int key) {
-        if(m.count(key)) {
-            auto itr = m[key];
-            l.splice(l.begin(), l, m[key]);
-            return m[key]->second;
+        if(pos.count(key)) {
+            // Reorder
+            keyValueList.splice(keyValueList.begin(), keyValueList, pos[key]);
+            return pos[key]->second;
         }
         return -1;
     }
     
     void put(int key, int value) {
-        if(m.count(key)) {
+        if(pos.count(key)) {
             // Update value of the key from the list
-            m[key]->second = value;
+            pos[key]->second = value;
             // Reorder
-            l.splice(l.begin(), l, m[key]);
+            keyValueList.splice(keyValueList.begin(), keyValueList, pos[key]);
             return;
         }
-        if(l.size() == capacity) {
+        if(keyValueList.size() == capacity) {
             // Remove key
-            int keyToBeDeleted = l.back().first;
-            l.pop_back();
-            m.erase(keyToBeDeleted);
+            int keyToBeDeleted = keyValueList.back().first;
+            keyValueList.pop_back();
+            pos.erase(keyToBeDeleted);
         }
         // Add key
-        l.push_front({key, value});
-        m[key] = l.begin();
+        keyValueList.push_front({key, value});
+        pos[key] = keyValueList.begin();
     }
 };
 
