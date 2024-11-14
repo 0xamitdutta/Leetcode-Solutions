@@ -104,6 +104,7 @@
 | https://leetcode.com/problems/word-break/ |
 | **Stack** |
 | https://leetcode.com/problems/exclusive-time-of-functions/ |
+| https://leetcode.com/problems/decode-string/description/ |
 | **Trees** | 
 | https://leetcode.com/problems/path-sum | 
 | https://leetcode.com/problems/path-sum-ii | 
