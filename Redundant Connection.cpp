@@ -33,25 +33,37 @@ public:
 // Union-Find O(n)
 class Solution {
 public:
-    int par[1005];
+    vector<int> par, size;
     vector<int> findRedundantConnection(vector<vector<int>>& edges) {
-        memset(par, -1, sizeof(par));
-        for(auto edge : edges){
-            int a = find(edge[0]);
-            int b = find(edge[1]);
-            if(a == b)
+        int n = edges.size();
+        par.resize(n+1); size.resize(n+1);
+        for(int i = 0; i < par.size(); i++) {
+            par[i] = i; size[i] = 1;
+        }
+
+        for(auto& edge: edges) {
+            int u = edge[0], v = edge[1];
+            int pu = find(u), pv = find(v);
+            if(pu == pv)
                 return edge;
-            Union(a, b);
+            join(pu, pv);
         }
         return {};
     }
-    
-    int find(int a){
-        if(par[a] < 0) return a;
-        return par[a] = find(par[a]);
+
+    int find(int x) {
+        if(x == par[x])
+            return x;
+        return par[x] = find(par[x]);
     }
-    
-    void Union(int a, int b){
-        par[a] = b;
+
+    void join(int u, int v) {
+        if(size[u] > size[v]) {
+            size[u] += size[v];
+            par[v] = u;
+        } else {
+            size[v] += size[u];
+            par[u] = v;
+        }
     }
 };
