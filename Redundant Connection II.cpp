@@ -11,8 +11,11 @@ public:
             if(par[v] == 0)
                 par[v] = u;
             else {
+                // We cannot simply return this edge because there might be a chance there will be cycle. So we have to consider both the edges as our potential answer
+                // Eg: edges = [[1, 2], [2, 3], [3, 4], [4, 2], [1, 5]] 
                 candidate1 = {par[v], v};
                 candidate2 = edge;
+                // We are invalidating this edge
                 edge[1] = 0;
             }
         }
@@ -27,11 +30,13 @@ public:
             if(pu == pv) {
                 // Cycle detected
                 if(!candidate1.empty())
+                    // We have invalidated second edge but still cycle is there. Hence candidate1 is the answer
                     return candidate1;
                 return edge;
             }
             join(pu, pv);
         }
+        // Everything is fine after invalidating second edge. Hence candidate2 is the answer
         return candidate2;
     }
 
