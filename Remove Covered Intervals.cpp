@@ -20,7 +20,7 @@ public:
 };
 
 // O(nlogn)
-// First sort by starting time. If 2 intervals have the same start time then the interval whose ending time is greater should come first
+// First sort by starting time. If 2 intervals have the same start time then the interval whose end time is greater should come first
 class Solution {
 public:
     int removeCoveredIntervals(vector<vector<int>>& intervals) {
