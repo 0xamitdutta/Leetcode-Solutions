@@ -1,4 +1,4 @@
-// Line Sweep Algorithm using prefix sum
+// Line Sweep algorithm using prefix sum
 class Solution {
 public:
     bool isZeroArray(vector<int>& nums, vector<vector<int>>& queries) {
