@@ -1,35 +1,40 @@
+// Make a TrieNode class similar to TreeNode / ListNode
+class TrieNode {
+public:
+    unordered_map<char, TrieNode*> children;
+    bool isWord;
+    TrieNode() : children({}), isWord(false) {}
+};
+
 class Trie {
-private:
-    map<char, Trie*> children;
-    bool isEnd;
+    TrieNode* root;
 public:
     Trie() {
-        children = {};
-        isEnd = false;
+        root = new TrieNode();
     }
     
     void insert(string word) {
-        Trie* node = this; // This is used to reference the object which is calling this function
+        TrieNode* node = root;
         for(char c : word) {
-            if(!node->children.count(c))
-                node->children[c] = new Trie();
+            if(!node->children[c])
+                node->children[c] = new TrieNode();
             node = node->children[c];
         }
-        node->isEnd = true;
+        node->isWord = true;
     }
     
     bool search(string word) {
-        Trie* node = this;
+        TrieNode* node = root;
         for(char c : word) {
             if(!node->children.count(c))
                 return false;
             node = node->children[c];
         }
-        return node->isEnd;
+        return node->isWord;
     }
     
     bool startsWith(string prefix) {
-        Trie* node = this;
+        TrieNode* node = root;
         for(char c : prefix) {
             if(!node->children.count(c))
                 return false;
