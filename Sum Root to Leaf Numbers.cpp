@@ -10,6 +10,28 @@
  * };
  */
 class Solution {
+public:
+    int ans = 0;
+    int sumNumbers(TreeNode* root) {
+        sumNumbersHelper(root, 0);
+        return ans;
+    }
+
+    void sumNumbersHelper(TreeNode* root, int sum) {
+        if(!root)
+            return;
+        sum += root->val;
+        if(!root->left && !root->right) {
+            ans += sum;
+            return;
+        }
+        sumNumbersHelper(root->left, sum * 10);
+        sumNumbersHelper(root->right, sum * 10);
+    }
+};
+
+// Without using a global variable
+class Solution {
 private:
     int sumNumbersHelper(TreeNode* root, int sum) {
         if(!root) return 0;
@@ -17,9 +39,8 @@ private:
         sum = sum * 10 + root->val;
         if(!root->left && !root->right)
             return sum;
-        int leftSum = sumNumbersHelper(root->left, sum);
-        int rightSum = sumNumbersHelper(root->right, sum);
-        return leftSum + rightSum;
+        return sumNumbersHelper(root->left, sum) + sumNumbersHelper(root->right, sum);
+        
     }
 public:
     int sumNumbers(TreeNode* root) {
