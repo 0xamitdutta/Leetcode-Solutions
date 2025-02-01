@@ -4,21 +4,20 @@ class Solution {
 public:
     vector<vector<int>> combinationSum(vector<int>& nums, int target) {
         vector<vector<int>> res;
-        vector<int> curr;
-        getSum(res, curr, nums, target, 0);
+        combinationSumHelper(nums, target, 0, {}, res);
         return res;
     }
-    
-    void getSum(vector<vector<int>>& res, vector<int>& curr, vector<int>& nums, int target, int index){
-        if(target < 0)
-            return;
-        if(target == 0){
+
+    void combinationSumHelper(vector<int>& nums, int target, int index, vector<int> curr, vector<vector<int>>& res) {
+        if(target == 0) {
             res.push_back(curr);
             return;
         }
-        for(int i = index; i < nums.size(); i++){
+        if(target < 0) 
+            return;
+        for(int i = index; i < nums.size(); i++) {
             curr.push_back(nums[i]);
-            getSum(res, curr, nums, target-nums[i], i);
+            combinationSumHelper(nums, target - nums[i], i, curr, res);
             curr.pop_back();
         }
     }
