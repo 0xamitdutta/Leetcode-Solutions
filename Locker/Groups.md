@@ -106,6 +106,7 @@
 | https://leetcode.com/problems/exclusive-time-of-functions/ |
 | https://leetcode.com/problems/decode-string/description/ |
 | https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/ |
+| https://leetcode.com/problems/simplify-path/description/ |
 | **Trees** | 
 | https://leetcode.com/problems/path-sum | 
 | https://leetcode.com/problems/path-sum-ii | 
