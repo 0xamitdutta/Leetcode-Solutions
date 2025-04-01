@@ -22,19 +22,23 @@ class Solution {
 public:
     int maximumSwap(int num) {
         string numString = to_string(num);
-        vector<int> digits(10); 
-        for(int i = 0; i < numString.size(); i++){ // Store the last index of a digit in range [0-9]
-            digits[numString[i]-'0'] = i;
-        }
-        // If there's a digit > numString[i] which is occuring later than swap it with numString[i];
-        for(int i = 0; i < numString.size(); i++){
-            for(int d = 9; d > numString[i]-'0'; d--){
-                if(digits[d] > i){
-                    swap(numString[i], numString[digits[d]]);
-                    return stoi(numString);
-                }
+        int maxDigit = INT_MIN, maxIdx = -1;
+        int lIdx = -1, rIdx = -1;
+        for(int i = numString.size()-1; i >= 0; i--) {
+            if(numString[i] > maxDigit) {
+                maxDigit = numString[i];
+                maxIdx = i;
+                continue;
+            }
+
+            if(numString[i] < maxDigit) {
+                lIdx = i; 
+                rIdx = maxIdx;
             }
         }
+        if(lIdx == -1)
+            return stoi(numString);
+        swap(numString[lIdx], numString[rIdx]);
         return stoi(numString);
     }
 };
