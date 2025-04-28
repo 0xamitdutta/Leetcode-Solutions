@@ -6,9 +6,7 @@ class Solution {
 public:
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& matrix) {
         vector<vector<int>> res;
-        int m = matrix.size();
-        if(m == 0) return res;
-        int n = matrix[0].size();
+        int m = matrix.size(), n = matrix[0].size();
         
         vector<vector<bool>> pacific(m, vector<bool>(n, 0));
         vector<vector<bool>> atlantic(m, vector<bool>(n, 0));
