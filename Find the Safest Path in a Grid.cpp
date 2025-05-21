@@ -1,3 +1,4 @@
+// Solution 1 (BFS + Binary Search)
 class Solution {
 public:
     vector<vector<int>> dir = {{0,1}, {1,0}, {0,-1}, {-1,0}};
@@ -75,5 +76,60 @@ public:
             }
         }
         return false;
+    }
+};
+
+// Solution 2 (BFS + Dijkstra)
+class Solution {
+public:
+    vector<vector<int>> dir = {{0,1}, {1,0}, {0,-1}, {-1,0}};
+    int maximumSafenessFactor(vector<vector<int>>& grid) {
+        int m = grid.size(), n = grid[0].size();
+        queue<pair<int, int>> q;
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j] == 1) {
+                    q.push({i, j});
+                    grid[i][j] = 0;
+                } 
+                else {
+                    grid[i][j] = -1;
+                }
+            }
+        }
+        while(!q.empty()) {
+            int size = q.size();
+            for(int i = 0; i < size; i++) {
+                int x = q.front().first, y = q.front().second;
+                q.pop();
+                for(int j = 0; j < 4; j++) {
+                    int nx = x + dir[j][0], ny = y + dir[j][1];
+                    if(nx >= 0 && ny >= 0 && nx < m && ny < n && grid[nx][ny] == -1) {
+                        grid[nx][ny] = grid[x][y] + 1;
+                        q.push({nx, ny});
+                    }
+                }
+            }
+        }
+
+        priority_queue<vector<int>> pq;
+        pq.push({grid[0][0], 0, 0});
+        grid[0][0] = -1;
+        while(!pq.empty()) {
+            int d = pq.top()[0], x = pq.top()[1], y = pq.top()[2];
+            pq.pop();
+
+            if(x == m-1 && y == n-1)
+                return d;
+
+            for(int i = 0; i < 4; i++) {
+                int nx = x + dir[i][0], ny = y + dir[i][1];
+                if(nx >= 0 && ny >= 0 && nx < m && ny < n && grid[nx][ny] != -1) {
+                    pq.push({min(d, grid[nx][ny]), nx, ny});
+                    grid[nx][ny] = -1;
+                }
+            }
+        }
+        return 0;
     }
 };
