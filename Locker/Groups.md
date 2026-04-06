@@ -49,7 +49,7 @@
 | https://leetcode.com/problems/non-overlapping-intervals/ | 
 | https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/ | 
 | **Priority Queue** |
-| https://leetcode.com/problems/top-k-frequent-words/submissions/ |
+| https://leetcode.com/problems/top-k-frequent-words/ |
 | **Linked List** |
 | https://leetcode.com/problems/linked-list-cycle/ |
 | https://leetcode.com/problems/linked-list-cycle-ii/|
@@ -144,7 +144,7 @@
 | https://leetcode.com/problems/word-ladder/ |
 | https://leetcode.com/problems/word-ladder-ii/ |
 | https://leetcode.com/problems/minimum-genetic-mutation/ |
-| https://leetcode.com/problems/open-the-lock/submissions/ |
+| https://leetcode.com/problems/open-the-lock/ |
 | https://leetcode.com/problems/shortest-bridge/ (Can be solved with dfs and bfs combo) |
 | https://leetcode.com/problems/minimum-cost-to-make-at-least-one-valid-path-in-a-grid/ |
 | **Multi Source BFS** |
